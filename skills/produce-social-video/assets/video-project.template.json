@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "initialized",
+  "brief_confirmation": {
+    "confirmed": false,
+    "confirmed_at": null,
+    "brief_file": null
+  },
+  "approved_brief": {},
+  "subject": "",
+  "audience": "",
+  "platform": "wechat-video-account",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "language": "zh-CN",
+  "duration_target_seconds": null,
+  "release_score_target": 9.5,
+  "automation": true,
+  "full_watch_required": true,
+  "assumptions": [],
+  "assets": [],
+  "youtube_sources": [],
+  "segments": [],
+  "checkpoints": {
+    "brief_confirmed": false,
+    "facts_locked": false,
+    "editorial_blueprint_locked": false,
+    "audio_locked": false,
+    "opening_30s_passed": false,
+    "segments_passed": false,
+    "assembly_passed": false,
+    "full_watch_completed": false,
+    "release_gate_passed": false
+  },
+  "artifacts": {
+    "facts_ledger": null,
+    "editorial_blueprint": null,
+    "paper_edit": null,
+    "caption_coverage_ledger": null,
+    "provenance_ledger": null,
+    "score_report": null
+  },
+  "outputs": []
+}

@@ -1,0 +1,54 @@
+{
+  "goal": {
+    "purpose": "解释一项科技变化",
+    "viewer_takeaway": "普通观众能够复述核心影响"
+  },
+  "audience": {
+    "description": "不了解专业术语的普通关注者",
+    "knowledge_level": "beginner",
+    "likely_confusion": ["人物背景", "专业概念"]
+  },
+  "editorial": {
+    "topic": "示例科技主题",
+    "viewer_promise": "用三分钟看懂它为什么重要",
+    "thesis": "技术价值取决于它如何改变普通人的选择",
+    "excluded_topics": ["无关政治争论"],
+    "factual_framing": "区分事实、当事人观点和预测"
+  },
+  "delivery": {
+    "video_count": 1,
+    "platforms": ["wechat-video-account"],
+    "aspect_ratio": "16:9",
+    "duration_target_seconds": 180,
+    "language": "zh-CN",
+    "deadline": null
+  },
+  "creative": {
+    "opening": "先给结果，再提出普通人的问题",
+    "structure": "背景、证据、解释、影响、结论",
+    "tone": "利落、可信、通俗",
+    "source_narration_balance": "原声作为证据，中文解说负责背景和解释"
+  },
+  "identity": {
+    "intro": "使用既有品牌片头",
+    "captions": "所有语言内容均有同步中文字幕",
+    "watermark": "使用既有品牌角标",
+    "outro": "使用既有固定片尾",
+    "voice": "使用用户批准的中文男声",
+    "music": "克制，所有对白下自动压低",
+    "cover": "输出平台适配封面"
+  },
+  "assets_rights": {
+    "supplied_assets": [],
+    "must_use": [],
+    "sourcing_permission": "可搜索公开来源，下载前检查来源与风险",
+    "rights_assumptions": ["发布者负责最终版权判断"]
+  },
+  "deliverables": ["成片", "封面", "标题与简介", "可编辑工程", "质检报告"],
+  "acceptance": {
+    "release_target": 9.0,
+    "non_negotiables": ["普通人看得懂", "字幕同步", "人声清楚"],
+    "previous_failures_to_avoid": ["缺少背景", "TTS杂音", "字幕延迟"]
+  },
+  "assumptions": ["默认使用账号既有视觉识别"]
+}

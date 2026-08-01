@@ -1,0 +1,24 @@
+{
+  "name": "cutcircuit",
+  "version": "0.1.0",
+  "description": "Evidence-led video production with an independent score-and-repair loop.",
+  "author": {
+    "name": "wangdongwu"
+  },
+  "license": "MIT",
+  "keywords": ["video", "editing", "quality-assurance", "youtube", "codex-skills"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "CutCircuit",
+    "shortDescription": "Source, cut, score, repair, and deliver videos.",
+    "longDescription": "CutCircuit orchestrates evidence-led video production, authorized YouTube sourcing, independent release scoring, and iterative repair until the requested quality threshold passes.",
+    "developerName": "wangdongwu",
+    "category": "Creative",
+    "capabilities": ["Video production", "Video review", "Media sourcing"],
+    "defaultPrompt": [
+      "Use CutCircuit to produce this video and run the quality loop.",
+      "Use CutCircuit to review this finished video for release.",
+      "Use CutCircuit to download and verify this authorized YouTube source."
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "外行也能用的专业视频制作"
+  short_description: "用通俗访谈理解需求，自动完成专业策划、剪辑、声音和质检"
+  default_prompt: "使用 $produce-social-video 用通俗问题帮我明确需求并给出推荐方案；我确认制作单后，再替我完成专业级视频制作与发布前质检。"

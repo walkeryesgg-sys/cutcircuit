@@ -1,0 +1,4 @@
+interface:
+  display_name: "YouTube Research Downloader"
+  short_description: "Robust authorized YouTube research media downloads"
+  default_prompt: "Use $youtube-research-downloader to download and verify an authorized YouTube video."

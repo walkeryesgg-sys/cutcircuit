@@ -1,0 +1,4 @@
+interface:
+  display_name: "自媒体视频10分制质检"
+  short_description: "按上线标准系统检测黑屏、版式、音画、内容与传播吸引力"
+  default_prompt: "使用 $score-social-video 对这条自媒体视频做10分制上线质检，并列出致命问题和修改优先级。"

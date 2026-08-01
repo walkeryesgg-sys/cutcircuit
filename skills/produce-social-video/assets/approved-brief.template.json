@@ -1,0 +1,54 @@
+{
+  "goal": {
+    "purpose": "",
+    "viewer_takeaway": ""
+  },
+  "audience": {
+    "description": "",
+    "knowledge_level": "beginner",
+    "likely_confusion": []
+  },
+  "editorial": {
+    "topic": "",
+    "viewer_promise": "",
+    "thesis": "",
+    "excluded_topics": [],
+    "factual_framing": ""
+  },
+  "delivery": {
+    "video_count": 1,
+    "platforms": [],
+    "aspect_ratio": "16:9",
+    "duration_target_seconds": null,
+    "language": "zh-CN",
+    "deadline": null
+  },
+  "creative": {
+    "opening": "",
+    "structure": "",
+    "tone": "",
+    "source_narration_balance": ""
+  },
+  "identity": {
+    "intro": "",
+    "captions": "",
+    "watermark": "",
+    "outro": "",
+    "voice": "",
+    "music": "",
+    "cover": ""
+  },
+  "assets_rights": {
+    "supplied_assets": [],
+    "must_use": [],
+    "sourcing_permission": "",
+    "rights_assumptions": []
+  },
+  "deliverables": [],
+  "acceptance": {
+    "release_target": 9.0,
+    "non_negotiables": [],
+    "previous_failures_to_avoid": []
+  },
+  "assumptions": []
+}

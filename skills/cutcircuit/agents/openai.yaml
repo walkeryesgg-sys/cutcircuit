@@ -1,0 +1,4 @@
+interface:
+  display_name: "CutCircuit"
+  short_description: "Evidence-led video production with a built-in quality loop"
+  default_prompt: "Use $cutcircuit to produce, score, repair, and deliver this video."
