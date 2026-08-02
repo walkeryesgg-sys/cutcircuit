@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import math
 import re
 import subprocess
 from pathlib import Path
@@ -8,6 +9,18 @@ from pathlib import Path
 
 def run(cmd):
     return subprocess.run(cmd, text=True, capture_output=True, check=True)
+
+
+def percentile(values, p):
+    if not values:
+        return None
+    ordered = sorted(values)
+    index = (len(ordered) - 1) * p
+    low = math.floor(index)
+    high = math.ceil(index)
+    if low == high:
+        return ordered[low]
+    return ordered[low] * (high - index) + ordered[high] * (index - low)
 
 
 def main():
@@ -30,6 +43,12 @@ def main():
         "-af", "silencedetect=noise=-45dB:d=0.50,volumedetect",
         "-f", "null", "-",
     ]).stderr
+    luminance_analysis = run([
+        "ffmpeg", "-hide_banner", "-i", str(args.video), *limit,
+        "-vf", "fps=1,scale=320:-1,signalstats,"
+               "metadata=print:key=lavfi.signalstats.YAVG",
+        "-an", "-f", "null", "-",
+    ]).stderr
 
     black = [
         {"start": float(a), "end": float(b), "duration": float(c)}
@@ -45,6 +64,12 @@ def main():
     scene_changes = len(re.findall(r"showinfo.*pts_time:", analysis))
     mean = re.search(r"mean_volume: ([-0-9.]+) dB", analysis)
     peak = re.search(r"max_volume: ([-0-9.]+) dB", analysis)
+    yavg = [float(x) for x in re.findall(
+        r"lavfi\.signalstats\.YAVG=([0-9.]+)", luminance_analysis
+    )]
+    underexposed_ratio = (
+        sum(value < 55 for value in yavg) / len(yavg) if yavg else None
+    )
 
     result = {
         "file": str(args.video),
@@ -59,8 +84,18 @@ def main():
         "scene_change_proxy": scene_changes,
         "mean_volume_db": float(mean.group(1)) if mean else None,
         "peak_volume_db": float(peak.group(1)) if peak else None,
+        "luminance": {
+            "sample_count": len(yavg),
+            "mean_yavg": round(sum(yavg) / len(yavg), 2) if yavg else None,
+            "p10_yavg": round(percentile(yavg, 0.10), 2) if yavg else None,
+            "median_yavg": round(percentile(yavg, 0.50), 2) if yavg else None,
+            "p90_yavg": round(percentile(yavg, 0.90), 2) if yavg else None,
+            "underexposed_frame_ratio_below_55": round(underexposed_ratio, 3)
+            if underexposed_ratio is not None else None,
+        },
         "notes": [
             "Automated signals are candidates, not final judgments.",
+            "Luminance samples use 1 fps YAVG; dark creative intent still requires human review.",
             "Full linear viewing and layout/sync review remain mandatory.",
         ],
     }

@@ -19,6 +19,8 @@ For source-led public videos, CutCircuit includes a reusable commentary template
 
 Ordinary videos target 9.0/10, paid or member content targets 9.5/10, and premium work targets 9.8/10 plus a complete linear watch. CutCircuit reports the real result when a target is not met; it does not weaken quality gates to manufacture a pass.
 
+CutCircuit also measures sampled video luminance alongside black/freeze/silence signals. The metric is diagnostic rather than an automatic style verdict: dark cinematic work is allowed, but faces, machinery, and evidence details must remain visibly legible instead of passing merely because no frame is technically black.
+
 ## Install
 
 Install the repository as a Codex plugin or copy the desired folders under `skills/` into your Codex skills directory. Restart or open a new Codex session after installation so the skills are discovered.

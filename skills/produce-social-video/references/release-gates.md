@@ -24,6 +24,7 @@ Any active fatal issue caps the score according to `$score-social-video`; never 
 - Inspect every transition before/at/after the cut.
 - Inspect every text card at its longest state.
 - Detect black, freeze, silence, peak, duration mismatch, and missing assets.
+- Sample luma throughout the candidate and inspect the subject at representative dark, median, and bright frames. Passing black-frame detection does not pass exposure: faces, machinery, and evidence details must remain legible on an ordinary display.
 - Verify output resolution, fps, codec, duration, audio sample rate, and pixel format.
 
 ## Mandatory experiential coverage
@@ -56,6 +57,7 @@ Check:
 - memorable conclusion;
 - save/share/comment/follow-next reasons;
 - coherent, restrained, recognizable taste;
+- a dark palette without crushed subject detail; overlays and gradients must support text contrast without making footage feel dim or muddy;
 - no meaningless fast cuts, fake suspense, or marketing-noise overload.
 - real footage is visually substantial rather than reduced to a decorative thumbnail; for evidence-led courses, use roughly 40:60 graphics-to-footage overall and at least 65% frame ownership during source-audio evidence unless a deliberate full-frame diagram is required.
 - adjacent media changes contain no exposed black/empty interval; use a hard cut or 4–8-frame overlap.
