@@ -52,8 +52,9 @@ Use when Chinese narration owns the story spine and multiple real sources provid
 Default for `member_original` when the lesson alternates Chinese explanation, primary-source excerpts, cases, and restrained diagrams.
 
 - Target Musk/source original audio around 45–50% when sufficient authoritative material exists.
-- Target real footage around 60% and designed explanation around 40%; source-evidence passages give the person/evidence at least 65% of the frame.
+- Target real footage around 60% and designed explanation around 40%; source-evidence passages use full-screen source by default.
 - Use graphics to clarify mechanisms, calculations, boundaries, or transfer exercises, never as a continuous PPT replacement.
+- Remove the explanation canvas when returning to source footage; do not embed the interview inside the preceding slide system.
 
 ## Routing examples
 

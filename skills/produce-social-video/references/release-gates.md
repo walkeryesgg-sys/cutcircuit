@@ -14,6 +14,8 @@ Block release for:
 - untranslated English source speech in a Chinese-language program;
 - missing or inconsistent required series watermark;
 - a `硬核火星人` watermark containing an unapproved English line, placed outside the canonical lower-right safe area, or reconstructed instead of using the canonical asset;
+- a required watermark that is technically present but visibly disappears against the scene;
+- a source-audio evidence passage presented as a decorative inset inside a slide/page canvas without an approved functional reason;
 - an outro teaser or next-episode claim that was not explicitly approved.
 
 Any active fatal issue caps the score according to `$score-social-video`; never average it away.
@@ -24,6 +26,7 @@ Any active fatal issue caps the score according to `$score-social-video`; never 
 - Inspect every media window at start+0.2s, midpoint, and end−0.2s.
 - Inspect every transition before/at/after the cut.
 - Inspect every text card at its longest state.
+- Generate and inspect a contact sheet before review render; classify every sampled beat as `watch` or `understand` using `visual-hierarchy.md`.
 - Detect black, freeze, silence, peak, duration mismatch, and missing assets.
 - Sample luma throughout the candidate and inspect the subject at representative dark, median, and bright frames. Passing black-frame detection does not pass exposure: faces, machinery, and evidence details must remain legible on an ordinary display.
 - Record bitrate and a blur/softness proxy for every full-frame source, then inspect perceived sharpness, motion blur, focus, and compression at 100%. Metadata resolution alone never passes the clarity gate.
@@ -45,7 +48,8 @@ Any active fatal issue caps the score according to `$score-social-video`; never 
 - Watch final 15 seconds.
 - Verify the final conclusion answers the opening question in language a beginner can repeat without specialist vocabulary.
 - Verify every foreign-language source-audio interval against a subtitle-coverage ledger; topic summaries do not satisfy this check.
-- Verify the series watermark at the start, midpoint, and end of the main program.
+- Verify the series watermark at the start, midpoint, and end of every materially different scene style.
+- Confirm captions remain in the lower safe area unless each exception avoids a verified collision.
 - Verify the outro uses the approved fixed brand copy and contains no invented next-episode preview.
 - For paid or 9.5+ delivery, watch the entire video linearly.
 
@@ -64,7 +68,8 @@ Check:
 - a dark palette without crushed subject detail; overlays and gradients must support text contrast without making footage feel dim or muddy;
 - bright, clean subject separation without sharpening halos, crunchy skin, clipped whites, crushed blacks, or template-like overgrading;
 - no meaningless fast cuts, fake suspense, or marketing-noise overload.
-- real footage is visually substantial rather than reduced to a decorative thumbnail; for evidence-led courses, use roughly 40:60 graphics-to-footage overall and at least 65% frame ownership during source-audio evidence unless a deliberate full-frame diagram is required.
+- real footage is visually substantial rather than reduced to a decorative thumbnail; for evidence-led courses, use roughly 40:60 graphics-to-footage overall and full-screen source during source audio unless an approved functional comparison requires otherwise.
+- no persistent white/light presentation canvas wrapping live footage; brightness must come from footage correction and clear hierarchy, not a slide shell.
 - adjacent media changes contain no exposed black/empty interval; use a hard cut or 4–8-frame overlap.
 - a cinematic outro has time to resolve: moving hero footage around 6 seconds or longer and a readable final hold around 0.8–1.2 seconds.
 

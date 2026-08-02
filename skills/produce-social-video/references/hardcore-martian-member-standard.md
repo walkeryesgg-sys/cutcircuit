@@ -27,8 +27,9 @@
 - Prefer native 1080p or better. Reject full-frame low-bitrate pseudo-HD, focus errors, severe motion blur, second-generation compression, and irrelevant filler.
 - Apply [picture-quality.md](picture-quality.md). Use YAVG 80–110 as a review band, not an auto-grade target.
 - Let real footage dominate when useful evidence exists: approximately 60% real footage / 40% designed explanation overall.
-- During source-audio evidence, keep the speaker/evidence at least 65% of the frame.
+- During source-audio evidence, show the speaker/evidence full screen by default. Use an inset or split screen only for a functional, documented reason; never frame an interview inside a presentation canvas.
 - Use graphics only for evidence, mechanisms, numbers, boundaries, and exercises. Avoid consecutive full-screen PPT-style cards.
+- Read and apply [visual-hierarchy.md](visual-hierarchy.md). Classify each beat as `watch` or `understand` before layout.
 - Do not reuse the same source shot more than twice; repeated use must serve a different narrative task.
 - Hard-cut adjacent footage or overlap by 4–8 frames; never expose an accidental black/empty slot.
 
@@ -38,7 +39,7 @@
 - Use the bundled `assets/hardcore-martian-watermark-zh.svg` as the canonical 1920×1080 watermark overlay.
 - The watermark contains the orbit mark and Chinese text `硬核火星人` only. Do not add `HARDCORE MARTIAN`, `MUSK ORIGINALS`, an episode label, or another permanent logo line.
 - Keep it fixed in the lower-right safe area throughout the main program at the asset's built-in size, coordinates, and opacity. Do not move it to the upper-left or reconstruct it with ad-hoc CSS.
-- Verify it at the start, midpoint, and end.
+- Verify it at the start, midpoint, and end of every materially different scene style, including visibility against bright and busy backgrounds.
 - Use the fixed series outro; do not invent next-episode copy.
 
 ## Captions and narration
@@ -47,6 +48,7 @@
 - Use the approved Jianying native `利落男声` for Chinese narration unless explicitly changed.
 - Keep sentence pauses around 0.22–0.38 s and paragraph/section pauses around 0.45–0.75 s; judge several consecutive sentences at normal speed.
 - Use the approved simple Chinese caption system: white, no background plate, no decorative effects, normally one semantic sentence per line, and no terminal Chinese full stop `。`.
+- Keep captions in the lower safe area by default. Move them only to avoid a verified subject/action/source-text collision; top captions require a documented reason.
 - Cover every English source word with correctly timed Chinese translation. Do not substitute a topic label for spoken subtitles.
 - Missing, duplicated, substituted, clipped, or perceptibly late caption text blocks release.
 
