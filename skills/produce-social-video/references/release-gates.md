@@ -25,6 +25,8 @@ Any active fatal issue caps the score according to `$score-social-video`; never 
 - Inspect every text card at its longest state.
 - Detect black, freeze, silence, peak, duration mismatch, and missing assets.
 - Sample luma throughout the candidate and inspect the subject at representative dark, median, and bright frames. Passing black-frame detection does not pass exposure: faces, machinery, and evidence details must remain legible on an ordinary display.
+- Record bitrate and a blur/softness proxy for every full-frame source, then inspect perceived sharpness, motion blur, focus, and compression at 100%. Metadata resolution alone never passes the clarity gate.
+- For the bright-and-clear `硬核火星人` house style, investigate an assembled-program mean YAVG outside roughly 80–110 and any sustained window below 55. These are review triggers, not auto-grading targets; subject visibility and highlight/shadow detail decide the verdict.
 - Verify output resolution, fps, codec, duration, audio sample rate, and pixel format.
 
 ## Mandatory experiential coverage
@@ -58,6 +60,7 @@ Check:
 - save/share/comment/follow-next reasons;
 - coherent, restrained, recognizable taste;
 - a dark palette without crushed subject detail; overlays and gradients must support text contrast without making footage feel dim or muddy;
+- bright, clean subject separation without sharpening halos, crunchy skin, clipped whites, crushed blacks, or template-like overgrading;
 - no meaningless fast cuts, fake suspense, or marketing-noise overload.
 - real footage is visually substantial rather than reduced to a decorative thumbnail; for evidence-led courses, use roughly 40:60 graphics-to-footage overall and at least 65% frame ownership during source-audio evidence unless a deliberate full-frame diagram is required.
 - adjacent media changes contain no exposed black/empty interval; use a hard cut or 4–8-frame overlap.

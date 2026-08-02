@@ -19,7 +19,7 @@ For source-led public videos, CutCircuit includes a reusable commentary template
 
 Ordinary videos target 9.0/10, paid or member content targets 9.5/10, and premium work targets 9.8/10 plus a complete linear watch. CutCircuit reports the real result when a target is not met; it does not weaken quality gates to manufacture a pass.
 
-CutCircuit also measures sampled video luminance alongside black/freeze/silence signals. The metric is diagnostic rather than an automatic style verdict: dark cinematic work is allowed, but faces, machinery, and evidence details must remain visibly legible instead of passing merely because no frame is technically black.
+CutCircuit also measures sampled video luminance and a blur/softness proxy alongside black/freeze/silence signals. These metrics are diagnostic rather than automatic style verdicts: nominally-HD or dark cinematic work passes only when faces, machinery, and evidence details remain visibly crisp and legible.
 
 ## Install
 

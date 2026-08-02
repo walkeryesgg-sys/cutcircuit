@@ -75,11 +75,12 @@ Record assumptions in the project manifest and continue. Do not turn reversible 
 3. Read [references/automation-workflow.md](references/automation-workflow.md) before production.
 4. Read [references/toolchain.md](references/toolchain.md) when checking or installing tools.
 5. Read [references/release-gates.md](references/release-gates.md) before previews and final render.
-6. Read [references/portability.md](references/portability.md) when installing this skill in another agent.
-7. Read [references/youtube-sourcing.md](references/youtube-sourcing.md) when YouTube discovery, subtitles, or footage are needed.
-8. Read and use `$score-social-video` as the independent evaluation surface. Do not weaken its caps.
-9. Read and use `$youtube-research-downloader` for authorized YouTube transfers when the editorial plan identifies a concrete evidence or visual gap. Keep discovery and candidate ranking here; keep transfer, retry, merge, and verification logic in the downloader skill.
-10. Read [references/source-led-commentary-template.md](references/source-led-commentary-template.md) when the approved format alternates full-screen source footage, narration, and original-audio evidence, especially for public-facing 4–8 minute videos.
+6. Read [references/picture-quality.md](references/picture-quality.md) before selecting, grading, or approving full-frame footage.
+7. Read [references/portability.md](references/portability.md) when installing this skill in another agent.
+8. Read [references/youtube-sourcing.md](references/youtube-sourcing.md) when YouTube discovery, subtitles, or footage are needed.
+9. Read and use `$score-social-video` as the independent evaluation surface. Do not weaken its caps.
+10. Read and use `$youtube-research-downloader` for authorized YouTube transfers when the editorial plan identifies a concrete evidence or visual gap. Keep discovery and candidate ranking here; keep transfer, retry, merge, and verification logic in the downloader skill.
+11. Read [references/source-led-commentary-template.md](references/source-led-commentary-template.md) when the approved format alternates full-screen source footage, narration, and original-audio evidence, especially for public-facing 4–8 minute videos.
 
 ## Production contract
 
@@ -113,6 +114,7 @@ Apply these defaults to every `马斯克方法论` / `硬核火星人` episode u
 - For Jianying narration, retain natural sentence cadence. Removing intentionally inserted source-audio gaps must not produce machine-gun delivery: rebuild the narration timeline with roughly 0.22–0.38 s between sentences and 0.45–0.75 s between paragraphs, then regenerate captions from that exact audio timeline.
 - Preserve energetic intro music. Duck it only under speech and restore its intended level between spoken phrases.
 - Build from original high-definition footage when available. Reject low-resolution, second-generation, repetitive, or semantically empty shots.
+- Default to a bright, clear house image. Apply source-specific exposure, gentle tonal contrast, restrained color, and output-size-aware sharpening in the order defined by `picture-quality.md`; never use a global dark wash or aggressive sharpening as a substitute for better footage.
 - Caption copy must come from one canonical narration/script manifest. Before release, compare every rendered caption entry character-for-character against that manifest after applying only explicitly approved style transforms. For the current `硬核火星人` series, remove the terminal Chinese full stop `。` from on-screen captions; do not remove or invent any other character. Any missing, duplicated, or substituted caption character is a fatal release failure.
 - Treat declared file dimensions as insufficient proof of picture quality. Reject footage whose container reports 720p/1080p but whose visible source is an upscaled low-resolution recording, heavily compressed repost, blurred crop, or second-generation capture. Main-program footage must be visibly native 720p or better, with native 1080p preferred; legacy low-resolution footage is allowed only as a deliberately small evidence insert after explicit approval, never as a full-frame B-roll shot.
 

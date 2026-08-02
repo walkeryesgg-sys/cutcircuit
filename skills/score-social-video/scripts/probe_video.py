@@ -46,7 +46,8 @@ def main():
     luminance_analysis = run([
         "ffmpeg", "-hide_banner", "-i", str(args.video), *limit,
         "-vf", "fps=1,scale=320:-1,signalstats,"
-               "metadata=print:key=lavfi.signalstats.YAVG",
+               "metadata=print:key=lavfi.signalstats.YAVG,"
+               "blurdetect=block_width=32:block_height=32:block_pct=80",
         "-an", "-f", "null", "-",
     ]).stderr
 
@@ -70,6 +71,7 @@ def main():
     underexposed_ratio = (
         sum(value < 55 for value in yavg) / len(yavg) if yavg else None
     )
+    blur = re.search(r"blur mean: ([0-9.]+)", luminance_analysis)
 
     result = {
         "file": str(args.video),
@@ -93,9 +95,14 @@ def main():
             "underexposed_frame_ratio_below_55": round(underexposed_ratio, 3)
             if underexposed_ratio is not None else None,
         },
+        "visual_clarity": {
+            "blurdetect_mean_proxy": round(float(blur.group(1)), 4) if blur else None,
+            "requires_human_review": True,
+        },
         "notes": [
             "Automated signals are candidates, not final judgments.",
             "Luminance samples use 1 fps YAVG; dark creative intent still requires human review.",
+            "Blurdetect is a content-dependent softness proxy, not a pass/fail score; compare similar shots and inspect motion at 100%.",
             "Full linear viewing and layout/sync review remain mandatory.",
         ],
     }
