@@ -50,6 +50,11 @@ def main():
                "blurdetect=block_width=32:block_height=32:block_pct=80",
         "-an", "-f", "null", "-",
     ]).stderr
+    loudness_analysis = run([
+        "ffmpeg", "-hide_banner", "-i", str(args.video), *limit,
+        "-vn", "-af", "loudnorm=I=-16:TP=-1:LRA=11:print_format=json",
+        "-f", "null", "-",
+    ]).stderr
 
     black = [
         {"start": float(a), "end": float(b), "duration": float(c)}
@@ -72,6 +77,15 @@ def main():
         sum(value < 55 for value in yavg) / len(yavg) if yavg else None
     )
     blur = re.search(r"blur mean: ([0-9.]+)", luminance_analysis)
+    integrated_loudness = re.search(
+        r'"input_i"\s*:\s*"([-0-9.]+)"', loudness_analysis
+    )
+    true_peak = re.search(
+        r'"input_tp"\s*:\s*"([-0-9.]+)"', loudness_analysis
+    )
+    loudness_range = re.search(
+        r'"input_lra"\s*:\s*"([-0-9.]+)"', loudness_analysis
+    )
 
     result = {
         "file": str(args.video),
@@ -86,6 +100,13 @@ def main():
         "scene_change_proxy": scene_changes,
         "mean_volume_db": float(mean.group(1)) if mean else None,
         "peak_volume_db": float(peak.group(1)) if peak else None,
+        "loudness": {
+            "integrated_lufs": float(integrated_loudness.group(1))
+            if integrated_loudness else None,
+            "true_peak_dbtp": float(true_peak.group(1)) if true_peak else None,
+            "loudness_range_lu": float(loudness_range.group(1))
+            if loudness_range else None,
+        },
         "luminance": {
             "sample_count": len(yavg),
             "mean_yavg": round(sum(yavg) / len(yavg), 2) if yavg else None,
@@ -103,6 +124,7 @@ def main():
             "Automated signals are candidates, not final judgments.",
             "Luminance samples use 1 fps YAVG; dark creative intent still requires human review.",
             "Blurdetect is a content-dependent softness proxy, not a pass/fail score; compare similar shots and inspect motion at 100%.",
+            "LUFS and dBTP come from FFmpeg loudnorm analysis; sample peak dB is retained only for compatibility.",
             "Full linear viewing and layout/sync review remain mandatory.",
         ],
     }

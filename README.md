@@ -20,6 +20,7 @@ For source-led public videos, CutCircuit includes a reusable commentary template
 Ordinary videos target 9.0/10, paid or member content targets 9.5/10, and premium work targets 9.8/10 plus a complete linear watch. CutCircuit reports the real result when a target is not met; it does not weaken quality gates to manufacture a pass.
 
 CutCircuit also measures sampled video luminance and a blur/softness proxy alongside black/freeze/silence signals. These metrics are diagnostic rather than automatic style verdicts: nominally-HD or dark cinematic work passes only when faces, machinery, and evidence details remain visibly crisp and legible.
+The probe also reports integrated LUFS and true peak dBTP so a file cannot pass merely because its average/sample volume looks reasonable.
 
 For `硬核火星人`, CutCircuit records two routing fields in every new production brief: `program_type` separates curriculum-based `member_original` work from free `public_story` work, while `edit_model` selects source-led, narration-led montage, or hybrid evidence-lesson cutting. The member profile uses the canonical lower-right Chinese-only `硬核火星人` orbit watermark.
 

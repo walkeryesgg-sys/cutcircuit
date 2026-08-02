@@ -29,6 +29,7 @@ Any active fatal issue caps the score according to `$score-social-video`; never 
 - Record bitrate and a blur/softness proxy for every full-frame source, then inspect perceived sharpness, motion blur, focus, and compression at 100%. Metadata resolution alone never passes the clarity gate.
 - For the bright-and-clear `硬核火星人` house style, investigate an assembled-program mean YAVG outside roughly 80–110 and any sustained window below 55. These are review triggers, not auto-grading targets; subject visibility and highlight/shadow detail decide the verdict.
 - Verify output resolution, fps, codec, duration, audio sample rate, and pixel format.
+- Measure integrated loudness and true peak; for the `硬核火星人` online master review around -16 LUFS and require true peak at or below -1 dBTP unless an approved platform specification overrides it.
 
 ## Mandatory experiential coverage
 
