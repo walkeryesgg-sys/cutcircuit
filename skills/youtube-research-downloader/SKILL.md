@@ -35,6 +35,10 @@ python3 scripts/download_youtube.py URL --output ./downloads
 python3 scripts/download_youtube.py URL --cookies-from-browser chrome \
   --proxy http://127.0.0.1:7897
 
+# Non-default Chrome profile or isolated user-data directory
+python3 scripts/download_youtube.py URL --cookies-from-browser chrome \
+  --browser-profile "/absolute/path/to/chrome-user-data"
+
 # Cap resolution and preserve research artifacts
 python3 scripts/download_youtube.py URL --max-height 1080 \
   --subtitles --metadata

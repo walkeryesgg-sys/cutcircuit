@@ -7,7 +7,7 @@
 | `Sign in to confirm you're not a bot` | Anonymous session rejected | Retry once with authorized `--cookies-from-browser` access. Ensure that browser can play the URL. |
 | `429 Too Many Requests` | Exit IP rate-limited | Stop retries, change proxy node, verify a different public IP, then retry. |
 | Extraction succeeds but every stream returns `403` | Stale extractor, JS challenge failure, or restricted exit IP | Upgrade yt-dlp on Python 3.10+, enable the official EJS component (the script does this), then change exit IP if needed. |
-| `Only images are available` / `Requested format is not available` | JS challenge solver missing or stale | Use current yt-dlp with `--remote-components ejs:github`; ensure Deno or another supported JS runtime is installed. |
+| `Only images are available` / `Requested format is not available` | JS challenge solver missing or stale | Use a current yt-dlp. Add `--remote-components ejs:github` only when `yt-dlp --help` advertises that option; otherwise use the JS-runtime/component mechanism supported by the installed build. |
 | SABR warning / formats missing URLs | YouTube delivery change | Upgrade yt-dlp; do not hard-code obsolete player clients. |
 | Python 3.9 deprecation blocks upgrade | Old default environment | Locate Python 3.10+ and install yt-dlp there; execute the script with that interpreter or point `--yt-dlp` at its binary. |
 | HTTPS EOF / TLS errors | Unstable proxy node | Retry a small number of times, then select a healthier node. |

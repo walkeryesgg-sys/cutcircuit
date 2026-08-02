@@ -23,6 +23,7 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--subtitle-langs", default="zh-Hans,zh-Hant,zh,en")
     p.add_argument("--metadata", action="store_true")
     p.add_argument("--cookies-from-browser", choices=("chrome", "firefox", "safari", "edge", "brave"))
+    p.add_argument("--browser-profile", help="Browser profile name or absolute user-data directory")
     p.add_argument("--proxy", help="HTTP or SOCKS proxy URL")
     p.add_argument("--yt-dlp", dest="yt_dlp", help="yt-dlp executable path")
     p.add_argument("--ffprobe", help="ffprobe executable path")
@@ -49,6 +50,17 @@ def format_selector(args: argparse.Namespace) -> str:
         return "bestaudio[ext=m4a]/bestaudio"
     cap = f"[height<={args.max_height}]" if args.max_height else ""
     return f"bestvideo{cap}[ext=mp4]+bestaudio[ext=m4a]/bestvideo{cap}+bestaudio/best{cap}/best"
+
+
+def supports_option(executable_path: str, option: str) -> bool:
+    """Return whether this yt-dlp build advertises an optional CLI flag."""
+    completed = subprocess.run(
+        [executable_path, "--help"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    return completed.returncode == 0 and option in completed.stdout
 
 
 def verify(ffprobe: str, path: Path, audio_only: bool) -> dict:
@@ -82,12 +94,20 @@ def main() -> int:
         before = {p.resolve() for p in output.rglob("*") if p.is_file()}
         template = ("%(playlist_title)s/%(playlist_index)03d - %(title)s [%(id)s].%(ext)s"
                     if args.playlist else "%(title)s [%(id)s].%(ext)s")
-        cmd = [yt_dlp, "--remote-components", "ejs:github", "--continue",
+        cmd = [yt_dlp]
+        if supports_option(yt_dlp, "--remote-components"):
+            cmd += ["--remote-components", "ejs:github"]
+        cmd += ["--continue",
                "--retries", "10", "--fragment-retries", "10", "--concurrent-fragments", "4",
                "--merge-output-format", "mp4", "-P", str(output), "-o", template,
                "-f", format_selector(args), "--yes-playlist" if args.playlist else "--no-playlist"]
+        if args.browser_profile and not args.cookies_from_browser:
+            raise RuntimeError("--browser-profile requires --cookies-from-browser")
         if args.cookies_from_browser:
-            cmd += ["--cookies-from-browser", args.cookies_from_browser]
+            browser_spec = args.cookies_from_browser
+            if args.browser_profile:
+                browser_spec += f":{args.browser_profile}"
+            cmd += ["--cookies-from-browser", browser_spec]
         if args.proxy:
             cmd += ["--proxy", args.proxy]
         if args.subtitles:
