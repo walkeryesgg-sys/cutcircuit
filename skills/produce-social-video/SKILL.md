@@ -76,18 +76,19 @@ Record assumptions in the project manifest and continue. Do not turn reversible 
 4. Read [references/toolchain.md](references/toolchain.md) when checking or installing tools.
 5. Read [references/release-gates.md](references/release-gates.md) before previews and final render.
 6. Read [references/picture-quality.md](references/picture-quality.md) before selecting, grading, or approving full-frame footage.
-7. Read [references/portability.md](references/portability.md) when installing this skill in another agent.
-8. Read [references/youtube-sourcing.md](references/youtube-sourcing.md) when YouTube discovery, subtitles, or footage are needed.
-9. Read and use `$score-social-video` as the independent evaluation surface. Do not weaken its caps.
-10. Read and use `$youtube-research-downloader` for authorized YouTube transfers when the editorial plan identifies a concrete evidence or visual gap. Keep discovery and candidate ranking here; keep transfer, retry, merge, and verification logic in the downloader skill.
-11. Read [references/source-led-commentary-template.md](references/source-led-commentary-template.md) when the approved format alternates full-screen source footage, narration, and original-audio evidence, especially for public-facing 4–8 minute videos.
+7. For a `硬核火星人` video, classify it with [references/hardcore-martian-program-types.md](references/hardcore-martian-program-types.md). If it is `member_original`, also read [references/hardcore-martian-member-standard.md](references/hardcore-martian-member-standard.md).
+8. Read [references/portability.md](references/portability.md) when installing this skill in another agent.
+9. Read [references/youtube-sourcing.md](references/youtube-sourcing.md) when YouTube discovery, subtitles, or footage are needed.
+10. Read and use `$score-social-video` as the independent evaluation surface. Do not weaken its caps.
+11. Read and use `$youtube-research-downloader` for authorized YouTube transfers when the editorial plan identifies a concrete evidence or visual gap. Keep discovery and candidate ranking here; keep transfer, retry, merge, and verification logic in the downloader skill.
+12. Read [references/source-led-commentary-template.md](references/source-led-commentary-template.md) when the approved format alternates full-screen source footage, narration, and original-audio evidence, especially for public-facing 4–8 minute videos.
 
 ## Production contract
 
 1. Complete the requirements interview and receive explicit approval of the 制作确认单.
 2. Run `scripts/doctor.py --json`; surface only missing required tools.
 3. Save the approved 制作确认单 using `assets/approved-brief.template.json`; consult `assets/approved-brief.example.json` when mapping plain-language answers. Validate it, then create `video-project.json` with `scripts/init_project.py <project-dir> --subject <subject> --brief-file <file> --confirmed` plus the known audience, platform, and score-target options. The initializer must refuse unconfirmed or incomplete projects.
-4. Resolve the delivery identity before editing: intro treatment, spoken-language subtitle policy, watermark, outro copy, voice, and music. Reuse established series defaults recorded in the confirmation sheet; never silently invent missing identity elements.
+4. Resolve `creative.program_type` and `creative.edit_model` before editing, then resolve the delivery identity: intro treatment, spoken-language subtitle policy, watermark, outro copy, voice, and music. Reuse established series defaults recorded in the confirmation sheet; never silently invent missing identity elements.
 5. Inventory all supplied assets before sourcing new media. Search YouTube only for a defined evidence or visual gap. For every selected video source, verify both metadata resolution and perceptual resolution from contact-sheet frames at multiple timestamps. A 1080p wrapper around visibly low-resolution footage fails the media gate.
 6. Build the editorial blueprint: facts ledger, one-sentence viewer promise, knowledge gap, story spine, emotional curve, evidence map, beat sheet, paper edit, narration, source quotes, and section order. Lock it before full rendering.
 7. Generate or resolve all voice tracks early; real audio duration owns the timeline.
@@ -107,7 +108,7 @@ Apply these defaults to every `马斯克方法论` / `硬核火星人` episode u
 
 - Use the approved high-definition series intro or its latest approved revision. Do not silently redesign it.
 - Add timed Chinese subtitles for every English source-audio passage. A persistent topic summary, bilingual label, or evidence card does not count as spoken subtitles. Check coverage from the first spoken word through the last.
-- Keep the approved `硬核火星人 / HARDCORE MARTIAN` watermark visible and consistent across the main program. Reuse the established orbit mark, typography, size, opacity, and safe-area placement.
+- Keep the approved orbit-mark plus Chinese-only `硬核火星人` watermark visible and consistent across the main program. Use `assets/hardcore-martian-watermark-zh.svg` in the lower-right safe area; do not add an English watermark line or replace it with an upper-left label.
 - End with the fixed `硬核火星人` brand outro. Do not announce or invent a next episode.
 - Use the approved native Jianying voice (currently `利落男声`) where narration is required; do not substitute a cloned voice without explicit approval.
 - When the user confirms Jianying-native TTS, treat the provider choice as a hard requirement: create or update a Jianying text-reading draft and obtain native output. Do not silently fall back to CosyVoice, voice conversion, zero-shot cloning, Edge TTS, or another voice provider merely because it is easier to automate.

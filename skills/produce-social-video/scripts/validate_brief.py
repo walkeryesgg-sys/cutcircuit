@@ -15,6 +15,8 @@ REQUIRED_TEXT = (
     "editorial.factual_framing",
     "delivery.aspect_ratio",
     "delivery.language",
+    "creative.program_type",
+    "creative.edit_model",
     "creative.opening",
     "creative.structure",
     "creative.tone",
@@ -75,6 +77,18 @@ def validate_brief(data):
     ratio = get_path(data, "delivery.aspect_ratio")
     if isinstance(ratio, str) and ratio not in {"16:9", "9:16", "1:1", "4:3", "3:4"}:
         errors.append("delivery.aspect_ratio: unsupported ratio")
+
+    program_type = get_path(data, "creative.program_type")
+    if isinstance(program_type, str) and program_type not in {
+        "member_original", "public_story", "custom"
+    }:
+        errors.append("creative.program_type: unsupported program type")
+
+    edit_model = get_path(data, "creative.edit_model")
+    if isinstance(edit_model, str) and edit_model not in {
+        "source_led", "narration_led_montage", "hybrid_evidence_lesson"
+    }:
+        errors.append("creative.edit_model: unsupported edit model")
 
     return errors
 

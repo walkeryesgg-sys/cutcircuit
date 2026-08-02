@@ -13,6 +13,7 @@ Block release for:
 - broken opening or ending.
 - untranslated English source speech in a Chinese-language program;
 - missing or inconsistent required series watermark;
+- a `硬核火星人` watermark containing an unapproved English line, placed outside the canonical lower-right safe area, or reconstructed instead of using the canonical asset;
 - an outro teaser or next-episode claim that was not explicitly approved.
 
 Any active fatal issue caps the score according to `$score-social-video`; never average it away.

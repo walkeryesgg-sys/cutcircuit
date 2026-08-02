@@ -24,6 +24,8 @@
     "deadline": null
   },
   "creative": {
+    "program_type": "custom",
+    "edit_model": "hybrid_evidence_lesson",
     "opening": "",
     "structure": "",
     "tone": "",

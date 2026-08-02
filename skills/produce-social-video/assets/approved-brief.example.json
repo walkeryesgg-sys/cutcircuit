@@ -24,6 +24,8 @@
     "deadline": null
   },
   "creative": {
+    "program_type": "public_story",
+    "edit_model": "source_led",
     "opening": "先给结果，再提出普通人的问题",
     "structure": "背景、证据、解释、影响、结论",
     "tone": "利落、可信、通俗",
