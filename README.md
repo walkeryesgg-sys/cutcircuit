@@ -22,6 +22,8 @@ Ordinary videos target 9.0/10, paid or member content targets 9.5/10, and premiu
 CutCircuit also measures sampled video luminance and a blur/softness proxy alongside black/freeze/silence signals. These metrics are diagnostic rather than automatic style verdicts: nominally-HD or dark cinematic work passes only when faces, machinery, and evidence details remain visibly crisp and legible.
 The probe also reports integrated LUFS and true peak dBTP so a file cannot pass merely because its average/sample volume looks reasonable.
 
+Programmed motion follows a deterministic, seek-safe timeline contract derived from official GSAP practices: labeled beats, explicit start/end states, transform-first animation, restrained easing, full-resolution performance checks, and frame sampling across every animated interval. CutCircuit also carries a regression checklist learned from real revisions so TTS boundary errors, linear-playback silence, late-track noise, weak first frames, mistimed spectacle, and undersized final shots are not reintroduced by later repairs.
+
 For `硬核火星人`, CutCircuit records two routing fields in every new production brief: `program_type` separates curriculum-based `member_original` work from free `public_story` work, while `edit_model` selects source-led, narration-led montage, or hybrid evidence-lesson cutting. The member profile uses the canonical lower-right Chinese-only `硬核火星人` orbit watermark.
 
 ## Install

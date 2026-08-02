@@ -75,13 +75,16 @@ Record assumptions in the project manifest and continue. Do not turn reversible 
 3. Read [references/automation-workflow.md](references/automation-workflow.md) before production.
 4. Read [references/toolchain.md](references/toolchain.md) when checking or installing tools.
 5. Read [references/release-gates.md](references/release-gates.md) before previews and final render.
-6. Read [references/picture-quality.md](references/picture-quality.md) before selecting, grading, or approving full-frame footage.
-7. For a `硬核火星人` video, classify it with [references/hardcore-martian-program-types.md](references/hardcore-martian-program-types.md). If it is `member_original`, also read [references/hardcore-martian-member-standard.md](references/hardcore-martian-member-standard.md).
-8. Read [references/portability.md](references/portability.md) when installing this skill in another agent.
-9. Read [references/youtube-sourcing.md](references/youtube-sourcing.md) when YouTube discovery, subtitles, or footage are needed.
-10. Read and use `$score-social-video` as the independent evaluation surface. Do not weaken its caps.
-11. Read and use `$youtube-research-downloader` for authorized YouTube transfers when the editorial plan identifies a concrete evidence or visual gap. Keep discovery and candidate ranking here; keep transfer, retry, merge, and verification logic in the downloader skill.
-12. Read [references/source-led-commentary-template.md](references/source-led-commentary-template.md) when the approved format alternates full-screen source footage, narration, and original-audio evidence, especially for public-facing 4–8 minute videos.
+6. Read [references/audio-boundary-safety.md](references/audio-boundary-safety.md) before trimming, splitting, replacing, or concatenating narration or source speech.
+7. Read [references/picture-quality.md](references/picture-quality.md) before selecting, grading, or approving full-frame footage.
+8. For a `硬核火星人` video, classify it with [references/hardcore-martian-program-types.md](references/hardcore-martian-program-types.md). If it is `member_original`, also read [references/hardcore-martian-member-standard.md](references/hardcore-martian-member-standard.md).
+9. Read [references/portability.md](references/portability.md) when installing this skill in another agent.
+10. Read [references/youtube-sourcing.md](references/youtube-sourcing.md) when YouTube discovery, subtitles, or footage are needed.
+11. Read and use `$score-social-video` as the independent evaluation surface. Do not weaken its caps.
+12. Read and use `$youtube-research-downloader` for authorized YouTube transfers when the editorial plan identifies a concrete evidence or visual gap. Keep discovery and candidate ranking here; keep transfer, retry, merge, and verification logic in the downloader skill.
+13. Read [references/source-led-commentary-template.md](references/source-led-commentary-template.md) when the approved format alternates full-screen source footage, narration, and original-audio evidence, especially for public-facing 4–8 minute videos.
+14. Read [references/motion-craft.md](references/motion-craft.md) before programming camera moves, animated overlays, kinetic typography, or multi-step scene motion.
+15. Read [references/regression-lessons.md](references/regression-lessons.md) before approving the opening, after every local repair, and before the final linear watch.
 
 ## Production contract
 
@@ -93,10 +96,12 @@ Record assumptions in the project manifest and continue. Do not turn reversible 
 6. Build the editorial blueprint: facts ledger, one-sentence viewer promise, knowledge gap, story spine, emotional curve, evidence map, beat sheet, paper edit, narration, source quotes, and section order. Lock it before full rendering.
 7. Generate or resolve all voice tracks early; real audio duration owns the timeline.
    For narration-led videos, preserve human breathing room: default sentence-boundary pauses to 220–380 ms and paragraph/section pauses to 450–750 ms. Do not collapse every detected silence to zero. Preview several consecutive sentences at normal speed and reject delivery that feels rushed even when every word is intelligible.
+   Never derive TTS cuts from estimated reading time. Build and validate a sentence-boundary ledger from the actual waveform/transcript, then trim only inside verified silence. Adjacent source ranges must neither overlap nor omit speech.
 8. Build a deterministic, seekable composition. Prefer HyperFrames; use another renderer only when the project or user explicitly requires it.
+   Treat motion as editorial emphasis, not decoration. Synchronize it to the narration and picture beats on one labeled timeline, use explicit start and end states, and keep the subject legible throughout the move.
 9. Render and inspect the opening 30 seconds first. Judge it as a first-time viewer with no background knowledge; repair it before rendering the remaining chapters.
 10. Render each chapter or hard scene group independently. Never make a 10-minute monolithic render the first meaningful QA surface.
-11. Run automated black/freeze/silence/media-window/layout checks on every segment. For generated narration, also run speech recognition or an equivalent listening check for noise, missing speech, repeated words, reference-prompt leakage, and caption drift.
+11. Run automated black/freeze/silence/media-window/layout checks on every segment. For generated narration, also run speech recognition or an equivalent listening check for noise, missing speech, repeated words, reference-prompt leakage, and caption drift. After any speech-boundary edit, audition from the preceding complete sentence through the following complete sentence at normal speed; waveform metrics alone cannot pass this gate.
 12. Assemble segments only after segment gates pass.
 13. Run `$score-social-video`, save its machine-readable report as `score-report.json`, and automatically repair P0/P1 findings. The caption gate must report canonical line count, exact text equality, terminal-punctuation policy, overflow status, and a rendered-frame spot check. The media gate must report every source's declared dimensions plus a human/perceptual verdict; metadata alone cannot pass it.
 14. Repeat build → test → score for at most three scored repair cycles. Stop early only when the release target passes. Never lower the target or weaken a fatal gate to force a pass.

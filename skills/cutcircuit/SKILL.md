@@ -20,10 +20,12 @@ Run video work as a quality circuit: **source → cut → score → repair**.
 1. Use `$produce-social-video` to interview the user and obtain explicit approval of the production brief.
 2. For `硬核火星人`, classify both `program_type` (`member_original`, `public_story`, or `custom`) and `edit_model` (`source_led`, `narration_led_montage`, or `hybrid_evidence_lesson`). Never infer member rules from editing appearance alone.
 3. Before composing frames, require `$produce-social-video` to read `references/visual-hierarchy.md`, assign every beat to `watch` or `understand`, and preserve footage-first hierarchy.
-4. Plan the argument, evidence, script, media, narration, captions, edit, sound, and delivery identity.
+4. Plan the argument, evidence, script, media, narration, captions, edit, sound, motion, and delivery identity. For programmed camera or graphic motion, require the producer to load `references/motion-craft.md` and build one seek-safe labeled timeline instead of disconnected delayed animations.
 5. If YouTube material is required, use `$youtube-research-downloader` for the authorized transfer and verification. Record provenance and reuse-rights assumptions.
 6. Produce and inspect a contact sheet before the review render. Reject slide-like source presentation, unjustified top captions, decorative footage insets, and low-contrast watermarks.
 7. Render in reviewable segments, run automated checks, assemble the candidate, and watch it linearly.
+   For every narration edit, require the producer to follow its `references/audio-boundary-safety.md`: use measured sentence boundaries, prove adjacent source ranges do not overlap, and audition the complete affected sentence chain before accepting the render.
+   Require the producer to run `references/regression-lessons.md` after every repair so a local fix cannot reintroduce a previously eliminated opening, audio, picture, sequencing, or ending defect.
 8. Hand the candidate to `$score-social-video`. Treat its fatal gates and score caps as independent release constraints.
 9. Repair every P0 issue. Repair P1 issues while the target remains unmet. Re-render every affected segment and rescore the assembled candidate.
 10. Repeat for at most three scored repair cycles. Never lower the target or weaken a gate to make a candidate pass.
