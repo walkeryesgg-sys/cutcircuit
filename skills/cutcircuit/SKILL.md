@@ -10,6 +10,7 @@ Run video work as a quality circuit: **source → cut → score → repair**.
 ## Route the request
 
 - For a new video or substantial revision, read and follow `$produce-social-video`.
+- When the approved treatment is full-screen source footage alternating narration with original-audio evidence, require `$produce-social-video` to load its source-led commentary template.
 - For an existing MP4 or MOV that only needs evaluation, read and follow `$score-social-video`.
 - For an authorized YouTube download, subtitle extraction, metadata archive, or download failure, read and follow `$youtube-research-downloader`.
 - For a full production, invoke the downloader only when the approved editorial plan contains a specific evidence or visual gap. Do not download speculative filler.

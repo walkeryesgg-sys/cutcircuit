@@ -15,6 +15,8 @@ The full workflow is:
 brief → evidence plan → source → produce → score → repair → rescore → deliver
 ```
 
+For source-led public videos, CutCircuit includes a reusable commentary template: full-screen real footage, Chinese narration alternating with complete original-audio evidence, failure or uncertainty before the midpoint, delayed visual payoff in the second half, and a horizontal full-bleed hero ending. The template keeps factual entity labels, subtitles, audio continuity, and final-shot composition inside the release gates.
+
 Ordinary videos target 9.0/10, paid or member content targets 9.5/10, and premium work targets 9.8/10 plus a complete linear watch. CutCircuit reports the real result when a target is not met; it does not weaken quality gates to manufacture a pass.
 
 ## Install

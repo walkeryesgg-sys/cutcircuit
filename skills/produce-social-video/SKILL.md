@@ -79,12 +79,13 @@ Record assumptions in the project manifest and continue. Do not turn reversible 
 7. Read [references/youtube-sourcing.md](references/youtube-sourcing.md) when YouTube discovery, subtitles, or footage are needed.
 8. Read and use `$score-social-video` as the independent evaluation surface. Do not weaken its caps.
 9. Read and use `$youtube-research-downloader` for authorized YouTube transfers when the editorial plan identifies a concrete evidence or visual gap. Keep discovery and candidate ranking here; keep transfer, retry, merge, and verification logic in the downloader skill.
+10. Read [references/source-led-commentary-template.md](references/source-led-commentary-template.md) when the approved format alternates full-screen source footage, narration, and original-audio evidence, especially for public-facing 4–8 minute videos.
 
 ## Production contract
 
 1. Complete the requirements interview and receive explicit approval of the 制作确认单.
 2. Run `scripts/doctor.py --json`; surface only missing required tools.
-3. Save the approved 制作确认单 using `assets/approved-brief.template.json`; consult `assets/approved-brief.example.json` when mapping plain-language answers. Validate it, then create `video-project.json` with `scripts/init_project.py --brief-file <file> --confirmed`. The initializer must refuse unconfirmed or incomplete projects.
+3. Save the approved 制作确认单 using `assets/approved-brief.template.json`; consult `assets/approved-brief.example.json` when mapping plain-language answers. Validate it, then create `video-project.json` with `scripts/init_project.py <project-dir> --subject <subject> --brief-file <file> --confirmed` plus the known audience, platform, and score-target options. The initializer must refuse unconfirmed or incomplete projects.
 4. Resolve the delivery identity before editing: intro treatment, spoken-language subtitle policy, watermark, outro copy, voice, and music. Reuse established series defaults recorded in the confirmation sheet; never silently invent missing identity elements.
 5. Inventory all supplied assets before sourcing new media. Search YouTube only for a defined evidence or visual gap. For every selected video source, verify both metadata resolution and perceptual resolution from contact-sheet frames at multiple timestamps. A 1080p wrapper around visibly low-resolution footage fails the media gate.
 6. Build the editorial blueprint: facts ledger, one-sentence viewer promise, knowledge gap, story spine, emotional curve, evidence map, beat sheet, paper edit, narration, source quotes, and section order. Lock it before full rendering.
@@ -108,6 +109,7 @@ Apply these defaults to every `马斯克方法论` / `硬核火星人` episode u
 - Keep the approved `硬核火星人 / HARDCORE MARTIAN` watermark visible and consistent across the main program. Reuse the established orbit mark, typography, size, opacity, and safe-area placement.
 - End with the fixed `硬核火星人` brand outro. Do not announce or invent a next episode.
 - Use the approved native Jianying voice (currently `利落男声`) where narration is required; do not substitute a cloned voice without explicit approval.
+- When the user confirms Jianying-native TTS, treat the provider choice as a hard requirement: create or update a Jianying text-reading draft and obtain native output. Do not silently fall back to CosyVoice, voice conversion, zero-shot cloning, Edge TTS, or another voice provider merely because it is easier to automate.
 - For Jianying narration, retain natural sentence cadence. Removing intentionally inserted source-audio gaps must not produce machine-gun delivery: rebuild the narration timeline with roughly 0.22–0.38 s between sentences and 0.45–0.75 s between paragraphs, then regenerate captions from that exact audio timeline.
 - Preserve energetic intro music. Duck it only under speech and restore its intended level between spoken phrases.
 - Build from original high-definition footage when available. Reject low-resolution, second-generation, repetitive, or semantically empty shots.
