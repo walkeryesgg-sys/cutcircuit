@@ -5,6 +5,13 @@ from pathlib import Path
 
 
 REQUIRED_TEXT = (
+    "preproduction.plan_version",
+    "preproduction.status",
+    "preproduction.approval_statement",
+    "preproduction.artifacts.plan",
+    "preproduction.artifacts.script",
+    "preproduction.artifacts.shot_list",
+    "preproduction.artifacts.storyboard",
     "goal.purpose",
     "goal.viewer_takeaway",
     "audience.description",
@@ -52,6 +59,10 @@ def validate_brief(data):
     if not isinstance(data, dict):
         return ["Brief must be a JSON object."]
 
+    schema_version = data.get("schema_version")
+    if schema_version != 2:
+        errors.append("schema_version: must be 2 for the professional pre-production gate")
+
     for dotted in REQUIRED_TEXT:
         value = get_path(data, dotted)
         if not isinstance(value, str) or not value.strip():
@@ -89,6 +100,10 @@ def validate_brief(data):
         "source_led", "narration_led_montage", "hybrid_evidence_lesson"
     }:
         errors.append("creative.edit_model: unsupported edit model")
+
+    plan_status = get_path(data, "preproduction.status")
+    if isinstance(plan_status, str) and plan_status != "approved":
+        errors.append("preproduction.status: must be approved")
 
     return errors
 

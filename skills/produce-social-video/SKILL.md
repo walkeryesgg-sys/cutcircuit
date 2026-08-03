@@ -11,7 +11,7 @@ Create the finished viewing experience, not merely a technically valid MP4.
 
 Do not start production merely because the user supplies a topic, URL, script, or asset folder. Begin with a short requirements interview, even when the initial request appears detailed.
 
-Before explicit confirmation, allow only read-only discovery needed to ask informed questions: inspect supplied files, existing series defaults, prior approved outputs, and source metadata. Do not download footage, write a script, generate voice or images, edit, render, publish, or mutate project assets.
+Before explicit confirmation, allow read-only discovery and planning work: inspect supplied files, existing series defaults, prior approved outputs, source metadata, and transcripts already supplied or safely available without material acquisition. Write the proposed script and planning documents, but do not download production footage, generate voice or images, edit, animate, render, publish, or mutate supplied project assets.
 
 ### Requirements interview
 
@@ -29,23 +29,35 @@ Ask concise questions in small batches, prioritizing decisions that change the f
 
 Do not ask the user to repeat established series defaults or facts that can be discovered locally. Translate specialist choices into viewer-facing consequences. Recommend one option first, explain it in one sentence, and allow “你帮我决定” as a complete answer. Ask no more than three questions in one message unless the user explicitly requests a full questionnaire.
 
-### Brief confirmation
+### Professional pre-production plan
 
-When the material decisions are known, return a compact **制作确认单** containing:
+After the requirements interview, read [references/preproduction-plan.md](references/preproduction-plan.md) and create a reviewable plan from [assets/preproduction-plan.template.md](assets/preproduction-plan.template.md). Do not reduce the plan to a short creative brief. Include enough detail for the user to understand what will be said, what will be shown, how the story progresses, and how quality will be judged before production cost is incurred.
+
+The plan must contain:
 
 - audience and viewer promise;
 - topic, thesis, exclusions, and factual framing;
 - video count, duration, platform, aspect ratio, language, and deadline;
-- hook and section structure;
-- source-footage, narration, captions, voice, music, intro, watermark, outro, and cover treatment;
+- complete narration/dialogue script with source-audio quotations clearly separated;
+- time-budgeted narrative structure and beat sheet;
+- shot list mapping every spoken unit to its visual purpose and intended source;
+- storyboard panels or textual frames showing composition, action, captions, overlays, transitions, and approximate duration;
+- source-footage, motion, narration, captions, voice, music, sound design, intro, watermark, outro, and cover treatment;
+- asset/source list with must-use moments, missing-material plan, provenance, rights assumptions, and substitutes;
 - deliverables, rights assumptions, and release target;
-- any assumptions still being made.
+- technical delivery specification, QA gates, known risks, fallbacks, and assumptions still being made.
 
-End with one explicit confirmation question. Production begins only after the user clearly approves the confirmation sheet with language such as “确认”“同意”“开始制作” or an equivalent unambiguous instruction. Silence, an unanswered question, an earlier generic “直接做”, or approval of only one sub-decision does not satisfy this gate.
+For short or simple work, concise textual storyboard panels are acceptable. For complex, branded, paid, or `9.5+` work, provide scene-by-scene rows with time ranges. Never use “按素材灵活处理” as a substitute for planning the core viewing experience.
 
-Validate the machine-readable confirmation sheet with `scripts/validate_brief.py`. Do not ask the user to read JSON; show the human summary and keep the validated JSON as the production contract.
+### Plan confirmation
 
-If the user changes a material requirement after confirmation, update the confirmation sheet and reconfirm only the changed scope. Small reversible implementation choices do not require renewed approval.
+Return the plan with a compact **制作确认单** summarizing the binding decisions. Assign a visible plan version such as `v1`. End with one explicit confirmation question that names that version.
+
+Production begins only after the user clearly approves the complete plan version with language such as “确认 v1”“同意这个制作方案”“按这版开始制作” or an equivalent unambiguous instruction. Silence, an unanswered question, an earlier generic “直接做”, approval of only one sub-decision, or approval given before the plan was presented does not satisfy this gate.
+
+Record the approved plan version, approval statement, and planning artifact paths in `assets/approved-brief.template.json`. Validate the machine-readable contract with `scripts/validate_brief.py`. Do not ask the user to read JSON; show the human plan and keep the validated JSON as the production contract.
+
+If the user changes a material requirement after confirmation, increment the plan version, update the affected plan sections and confirmation sheet, and reconfirm the changed scope. Small reversible implementation choices do not require renewed approval.
 
 ## Autonomous production after confirmation
 
@@ -71,7 +83,7 @@ Record assumptions in the project manifest and continue. Do not turn reversible 
 ## Required reads
 
 1. Read [references/novice-intake.md](references/novice-intake.md) before asking production questions.
-2. Read [references/editorial-blueprint.md](references/editorial-blueprint.md) after confirmation and before scripting.
+2. Read [references/editorial-blueprint.md](references/editorial-blueprint.md) and [references/preproduction-plan.md](references/preproduction-plan.md) after the interview and before presenting the production plan.
 3. Read [references/automation-workflow.md](references/automation-workflow.md) before production.
 4. Read [references/toolchain.md](references/toolchain.md) when checking or installing tools.
 5. Read [references/release-gates.md](references/release-gates.md) before previews and final render.
@@ -88,12 +100,12 @@ Record assumptions in the project manifest and continue. Do not turn reversible 
 
 ## Production contract
 
-1. Complete the requirements interview and receive explicit approval of the 制作确认单.
+1. Complete the requirements interview, deliver the full professional pre-production plan, and receive explicit approval of its named version.
 2. Run `scripts/doctor.py --json`; surface only missing required tools.
-3. Save the approved 制作确认单 using `assets/approved-brief.template.json`; consult `assets/approved-brief.example.json` when mapping plain-language answers. Validate it, then create `video-project.json` with `scripts/init_project.py <project-dir> --subject <subject> --brief-file <file> --confirmed` plus the known audience, platform, and score-target options. The initializer must refuse unconfirmed or incomplete projects.
+3. Save the approved plan contract using `assets/approved-brief.template.json`; consult `assets/approved-brief.example.json` when mapping plain-language answers. Record its version, approval statement, and plan artifact paths. Validate it, then create `video-project.json` with `scripts/init_project.py <project-dir> --subject <subject> --brief-file <file> --confirmed` plus the known audience, platform, and score-target options. The initializer must refuse unconfirmed or incomplete projects.
 4. Resolve `creative.program_type` and `creative.edit_model` before editing, then resolve the delivery identity: intro treatment, spoken-language subtitle policy, watermark, outro copy, voice, and music. Reuse established series defaults recorded in the confirmation sheet; never silently invent missing identity elements.
 5. Inventory all supplied assets before sourcing new media. Search YouTube only for a defined evidence or visual gap. For every selected video source, verify both metadata resolution and perceptual resolution from contact-sheet frames at multiple timestamps. A 1080p wrapper around visibly low-resolution footage fails the media gate.
-6. Build the editorial blueprint: facts ledger, one-sentence viewer promise, knowledge gap, story spine, emotional curve, evidence map, beat sheet, paper edit, narration, source quotes, and section order. Lock it before full rendering.
+6. Execute the approved editorial blueprint: facts ledger, one-sentence viewer promise, knowledge gap, story spine, emotional curve, evidence map, beat sheet, paper edit, narration, source quotes, shot list, storyboard, and section order. Do not silently replace its central structure after approval.
 7. Generate or resolve all voice tracks early; real audio duration owns the timeline.
    For narration-led videos, preserve human breathing room: default sentence-boundary pauses to 220–380 ms and paragraph/section pauses to 450–750 ms. Do not collapse every detected silence to zero. Preview several consecutive sentences at normal speed and reject delivery that feels rushed even when every word is intelligible.
    Never derive TTS cuts from estimated reading time. Build and validate a sentence-boundary ledger from the actual waveform/transcript, then trim only inside verified silence. Adjacent source ranges must neither overlap nor omit speech.

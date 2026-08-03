@@ -12,8 +12,10 @@ CutCircuit is a Codex plugin for evidence-led video production. It combines four
 The full workflow is:
 
 ```text
-brief → evidence plan → source → produce → score → repair → rescore → deliver
+interview → script + structure + shot list + storyboard → user approval → source → produce → score → repair → rescore → deliver
 ```
+
+CutCircuit does not begin production from a topic or URL alone. It first delivers a versioned professional pre-production plan covering the complete script, narrative structure, beat sheet, shot list, storyboard, sound and caption treatment, asset/rights plan, risks, delivery specification, and acceptance gates. Formal media acquisition, TTS, editing, animation, and rendering begin only after the user explicitly approves that plan version.
 
 For source-led public videos, CutCircuit includes a reusable commentary template: full-screen real footage, Chinese narration alternating with complete original-audio evidence, failure or uncertainty before the midpoint, delayed visual payoff in the second half, and a horizontal full-bleed hero ending. The template keeps factual entity labels, subtitles, audio continuity, and final-shot composition inside the release gates.
 

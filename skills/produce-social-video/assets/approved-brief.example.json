@@ -1,4 +1,16 @@
 {
+  "schema_version": 2,
+  "preproduction": {
+    "plan_version": "v1",
+    "status": "approved",
+    "approval_statement": "确认 v1，按这版开始制作",
+    "artifacts": {
+      "plan": "preproduction-plan.md",
+      "script": "preproduction-plan.md#4-完整脚本",
+      "shot_list": "preproduction-plan.md#6-镜头表",
+      "storyboard": "preproduction-plan.md#7-分镜"
+    }
+  },
   "goal": {
     "purpose": "解释一项科技变化",
     "viewer_takeaway": "普通观众能够复述核心影响"
