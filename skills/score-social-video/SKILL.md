@@ -22,6 +22,8 @@ Judge the delivered viewing experience, not whether the render command succeeded
 6. Audit speech boundaries and captions separately:
    - do not cut a speaker mid-sentence;
    - compare subtitle onset and exit to audible speech;
+   - run `../produce-social-video/scripts/validate_caption_semantics.py --strict CAPTIONS.json` when a canonical caption ledger is available, then manually inspect every warning in context;
+   - prefer one complete sentence in one timed cue, even when it wraps to two visual rows; never replace the first half while the spoken sentence is still continuing;
    - inspect TTS↔source-audio gaps;
    - verify music never masks speech.
 7. Audit visual ownership and seams:
@@ -29,6 +31,7 @@ Judge the delivered viewing experience, not whether the render command succeeded
    - inspect every outgoing/incoming media boundary for an uncovered black or empty interval;
    - verify a reusable intro communicates both authority and viewer benefit;
    - verify the outro has enough moving footage and final hold to feel intentional.
+   - reject non-uniformly stretched footage and B-roll that is only brand-adjacent rather than sentence-relevant.
 8. Apply fatal gates before calculating the weighted score.
 9. Compare genre and rhythm with the relevant account benchmark; do not force one benchmark’s cut rate onto every format.
 10. Report evidence with timecodes and distinguish observed facts from inferred retention potential.

@@ -27,7 +27,9 @@
     "facts_locked": false,
     "editorial_blueprint_locked": false,
     "audio_locked": false,
+    "caption_semantics_passed": false,
     "opening_30s_passed": false,
+    "risk_reel_passed": false,
     "segments_passed": false,
     "assembly_passed": false,
     "full_watch_completed": false,
@@ -38,6 +40,8 @@
     "editorial_blueprint": null,
     "paper_edit": null,
     "caption_coverage_ledger": null,
+    "caption_semantics_report": null,
+    "iteration_ledger": null,
     "provenance_ledger": null,
     "score_report": null
   },

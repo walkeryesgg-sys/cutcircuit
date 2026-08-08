@@ -89,14 +89,16 @@ Record assumptions in the project manifest and continue. Do not turn reversible 
 5. Read [references/release-gates.md](references/release-gates.md) before previews and final render.
 6. Read [references/audio-boundary-safety.md](references/audio-boundary-safety.md) before trimming, splitting, replacing, or concatenating narration or source speech.
 7. Read [references/picture-quality.md](references/picture-quality.md) before selecting, grading, or approving full-frame footage.
-8. For a `硬核火星人` video, classify it with [references/hardcore-martian-program-types.md](references/hardcore-martian-program-types.md). If it is `member_original`, also read [references/hardcore-martian-member-standard.md](references/hardcore-martian-member-standard.md).
-9. Read [references/portability.md](references/portability.md) when installing this skill in another agent.
-10. Read [references/youtube-sourcing.md](references/youtube-sourcing.md) when YouTube discovery, subtitles, or footage are needed.
-11. Read and use `$score-social-video` as the independent evaluation surface. Do not weaken its caps.
-12. Read and use `$youtube-research-downloader` for authorized YouTube transfers when the editorial plan identifies a concrete evidence or visual gap. Keep discovery and candidate ranking here; keep transfer, retry, merge, and verification logic in the downloader skill.
-13. Read [references/source-led-commentary-template.md](references/source-led-commentary-template.md) when the approved format alternates full-screen source footage, narration, and original-audio evidence, especially for public-facing 4–8 minute videos.
-14. Read [references/motion-craft.md](references/motion-craft.md) before programming camera moves, animated overlays, kinetic typography, or multi-step scene motion.
-15. Read [references/regression-lessons.md](references/regression-lessons.md) before approving the opening, after every local repair, and before the final linear watch.
+8. Read [references/iteration-budget.md](references/iteration-budget.md) before the first render and enforce its risk-reel and round-budget gates.
+9. Read [references/caption-segmentation.md](references/caption-segmentation.md) before generating narration or source captions.
+10. For a `硬核火星人` video, classify it with [references/hardcore-martian-program-types.md](references/hardcore-martian-program-types.md). If it is `member_original`, also read [references/hardcore-martian-member-standard.md](references/hardcore-martian-member-standard.md).
+11. Read [references/portability.md](references/portability.md) when installing this skill in another agent.
+12. Read [references/youtube-sourcing.md](references/youtube-sourcing.md) when YouTube discovery, subtitles, or footage are needed.
+13. Read and use `$score-social-video` as the independent evaluation surface. Do not weaken its caps.
+14. Read and use `$youtube-research-downloader` for authorized YouTube transfers when the editorial plan identifies a concrete evidence or visual gap. Keep discovery and candidate ranking here; keep transfer, retry, merge, and verification logic in the downloader skill.
+15. Read [references/source-led-commentary-template.md](references/source-led-commentary-template.md) when the approved format alternates full-screen source footage, narration, and original-audio evidence, especially for public-facing 4–8 minute videos.
+16. Read [references/motion-craft.md](references/motion-craft.md) before programming camera moves, animated overlays, kinetic typography, or multi-step scene motion.
+17. Read [references/regression-lessons.md](references/regression-lessons.md) before approving the opening, after every local repair, and before the final linear watch.
 
 ## Production contract
 
@@ -111,12 +113,12 @@ Record assumptions in the project manifest and continue. Do not turn reversible 
    Never derive TTS cuts from estimated reading time. Build and validate a sentence-boundary ledger from the actual waveform/transcript, then trim only inside verified silence. Adjacent source ranges must neither overlap nor omit speech.
 8. Build a deterministic, seekable composition. Prefer HyperFrames; use another renderer only when the project or user explicitly requires it.
    Treat motion as editorial emphasis, not decoration. Synchronize it to the narration and picture beats on one labeled timeline, use explicit start and end states, and keep the subject legible throughout the move.
-9. Render and inspect the opening 30 seconds first. Judge it as a first-time viewer with no background knowledge; repair it before rendering the remaining chapters.
+9. Render and inspect a compact risk reel before any full-length render. It must include the opening 30 seconds plus representative evidence, the densest explanation/caption state, a source↔narration seam, and the ending. Judge it as a first-time viewer and as a brand/technical gate; lock its accepted decisions before rendering the remaining chapters.
 10. Render each chapter or hard scene group independently. Never make a 10-minute monolithic render the first meaningful QA surface.
 11. Run automated black/freeze/silence/media-window/layout checks on every segment. For generated narration, also run speech recognition or an equivalent listening check for noise, missing speech, repeated words, reference-prompt leakage, and caption drift. After any speech-boundary edit, audition from the preceding complete sentence through the following complete sentence at normal speed; waveform metrics alone cannot pass this gate.
 12. Assemble segments only after segment gates pass.
-13. Run `$score-social-video`, save its machine-readable report as `score-report.json`, and automatically repair P0/P1 findings. The caption gate must report canonical line count, exact text equality, terminal-punctuation policy, overflow status, and a rendered-frame spot check. The media gate must report every source's declared dimensions plus a human/perceptual verdict; metadata alone cannot pass it.
-14. Repeat build → test → score for at most three scored repair cycles. Stop early only when the release target passes. Never lower the target or weaken a fatal gate to force a pass.
+13. Run `$score-social-video`, save its machine-readable report as `score-report.json`, and automatically repair P0/P1 findings. The caption gate must report canonical line count, exact text equality, semantic-boundary validation, terminal-punctuation policy, overflow status, and a rendered-frame spot check. The media gate must report every source's declared dimensions plus a human/perceptual verdict; metadata alone cannot pass it.
+14. Keep user-visible review to the three-round budget in `references/iteration-budget.md`: risk reel, full candidate, bounded repair. Run internal build/test/score passes before presenting each round. Stop early only when the release target passes. Never lower the target or weaken a fatal gate to force a pass.
 15. Deliver the final video, score report, provenance ledger, project manifest, and editable source.
 
 ## Musk Method series defaults
@@ -133,7 +135,7 @@ Apply these defaults to every `马斯克方法论` / `硬核火星人` episode u
 - Preserve energetic intro music. Duck it only under speech and restore its intended level between spoken phrases.
 - Build from original high-definition footage when available. Reject low-resolution, second-generation, repetitive, or semantically empty shots.
 - Default to a bright, clear house image. Apply source-specific exposure, gentle tonal contrast, restrained color, and output-size-aware sharpening in the order defined by `picture-quality.md`; never use a global dark wash or aggressive sharpening as a substitute for better footage.
-- Caption copy must come from one canonical narration/script manifest. Before release, compare every rendered caption entry character-for-character against that manifest after applying only explicitly approved style transforms. For the current `硬核火星人` series, remove the terminal Chinese full stop `。` from on-screen captions; do not remove or invent any other character. Any missing, duplicated, or substituted caption character is a fatal release failure.
+- Caption copy must come from one canonical narration/script manifest. Segment it by complete sentence or natural clause boundaries, never by equal duration or midpoint character count. Prefer one cue for a complete sentence; when it is visually too long, wrap that same cue to two lines instead of replacing it halfway through a clause. Before release, run `scripts/validate_caption_semantics.py` and compare every rendered caption entry character-for-character against the manifest after applying only explicitly approved style transforms. For the current `硬核火星人` series, remove the terminal Chinese full stop `。` from on-screen captions; do not remove or invent any other character. Any missing, duplicated, substituted, or high-risk mid-clause break is a release failure.
 - Treat declared file dimensions as insufficient proof of picture quality. Reject footage whose container reports 720p/1080p but whose visible source is an upscaled low-resolution recording, heavily compressed repost, blurred crop, or second-generation capture. Main-program footage must be visibly native 720p or better, with native 1080p preferred; legacy low-resolution footage is allowed only as a deliberately small evidence insert after explicit approval, never as a full-frame B-roll shot.
 
 Treat missing English-source subtitle coverage, a missing series watermark, an unapproved outro teaser, or deviation from the approved intro/voice as fatal release-gate failures for paid content.

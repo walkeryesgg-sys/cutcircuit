@@ -35,7 +35,7 @@
 
 ## Brand lock
 
-- Use the approved high-definition series intro or its latest explicitly approved revision.
+- Use the approved high-definition series intro or its latest explicitly approved revision. For a new episode, the cold-open hero shots must be checked against recent episodes; do not recycle a familiar launch/factory montage by default. Prefer fresh native-1080p-or-better footage whose first frame already carries spectacle, tension, or consequence.
 - Use the bundled `assets/hardcore-martian-watermark-zh.svg` as the canonical 1920×1080 watermark overlay.
 - The watermark contains the orbit mark and Chinese text `硬核火星人` only. Do not add `HARDCORE MARTIAN`, `MUSK ORIGINALS`, an episode label, or another permanent logo line.
 - Keep it fixed in the lower-right safe area throughout the main program at the asset's built-in size, coordinates, and opacity. Do not move it to the upper-left or reconstruct it with ad-hoc CSS.
@@ -48,14 +48,19 @@
 - Use the approved Jianying native `利落男声` for Chinese narration unless explicitly changed.
 - Keep sentence pauses around 0.22–0.38 s and paragraph/section pauses around 0.45–0.75 s; judge several consecutive sentences at normal speed.
 - Use the approved simple Chinese caption system: white, no background plate, no decorative effects, normally one semantic sentence per line, and no terminal Chinese full stop `。`.
+- Keep a complete spoken sentence in one timed cue whenever it fits. If it needs two visual rows, wrap within the same cue and keep both rows on screen through the sentence ending; do not replace the first half with the second half mid-sentence.
+- Split a long sentence only at an audible punctuation/pause boundary that completes a clause. Never end a cue after a conjunction, preposition, modifier, subject awaiting its predicate, verb awaiting its object, number awaiting its unit, or paired construction such as `不是…而是…`.
 - Keep captions in the lower safe area by default. Move them only to avoid a verified subject/action/source-text collision; top captions require a documented reason.
-- Cover every English source word with correctly timed Chinese translation. Do not substitute a topic label for spoken subtitles.
+- Cover every English source word with a real-time synchronized bilingual cue pair: Chinese translation as the primary line and the matching English transcript as the secondary line. Both lines must share one source-timecode ledger; do not independently estimate their timing.
+- Preserve the original word order and meaning closely enough that the English line can be audited against the source. Clearly mark uncertain auto-transcript words for manual review rather than silently converting them into a polished topic summary.
+- Do not substitute a topic label, paragraph summary, or editorial interpretation for spoken bilingual subtitles.
 - Missing, duplicated, substituted, clipped, or perceptibly late caption text blocks release.
 
 ## Sound
 
 - Keep narration and original speech consistently intelligible; music must not mask consonants, sentence endings, or room-tone evidence.
 - Keep the normal music bed stable. Do not pump it up and down around every phrase; use controlled changes only at section transitions and the ending.
+- Normalize the selected music asset to the delivery sample rate before assembly. If it is shorter than the program, create a tested crossfade loop with no level jump or exposed seam; permit only intentional opening and ending fades while the normal bed remains at one fixed gain.
 - Preserve meaningful original sound in launches, factories, demonstrations, reactions, and interviews.
 - For the assembled online master, review around -16 LUFS integrated with true peak at or below -1 dBTP; treat platform delivery needs and source dynamics as final authority rather than forcing destructive normalization.
 
