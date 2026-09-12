@@ -55,5 +55,6 @@ Before preview or release:
 - watch motion at normal speed; a sharp paused frame does not prove clean motion;
 - compare representative frames before and after grading at 100%;
 - record a human verdict for subject sharpness, motion blur, compression, exposure, highlight retention, shadow detail, and enhancement artifacts.
+- store an explicit `perceptual_clarity_pass` verdict for every scheduled full-frame window. The renderer must refuse a source whose verdict is missing or false; container dimensions and a generated contact sheet never substitute for that approval.
 
 Any full-frame hero, interview, factory, rocket, or evidence shot that is visibly soft on an ordinary display is a release blocker for premium/member content unless the brief explicitly approves archival softness.

@@ -11,6 +11,8 @@ Block release for:
 - unsupported factual claims presented as fact;
 - material rights/privacy risk;
 - broken opening or ending.
+- viewer-facing dead air before the fixed outro, including a silent technical-test interval not required by the approved script;
+- an approved music treatment that is absent, effectively inaudible after gain, discontinuous before the outro, or replaced by unintended silence;
 - any unintended sound before, inside, or after narration, including a musical note, reference-prompt residue, click, breath fragment, duplicated phoneme, or synthesis artifact;
 - an approved native TTS provider replaced by a clone, voice conversion, zero-shot imitation, or other provider without explicit approval;
 - visible playback stutter, repeated/frozen frames, or uneven motion caused by sparse keyframes, VFR timing, frame extraction, or muxing;
@@ -43,10 +45,12 @@ Any active fatal issue caps the score according to `$score-social-video`; never 
 - Compare every scheduled source's display aspect ratio with its native aspect ratio and inspect the actual output crop. Any non-uniform scale fails before render.
 - Attach each B-roll window to the exact narration sentence or evidence beat it supports. A filename, company, or general technology theme is not sufficient semantic relevance.
 - Report distinct-shot reuse counts and block paid-content release when a shot appears more than twice without an approved narrative reason.
+- Compare source-video IDs/paths and perceptual fingerprints against recent series episodes. Treat a new crop or unused timestamp from an overexposed recurring source as familiar reuse, not as a new visual family.
 - Require sparse-keyframe source clips to pass start/mid/end seek tests or be rebuilt to a seek-safe GOP before the full render.
 - Normalize every scheduled source to CFR at the delivery frame rate and a GOP no longer than one second before HyperFrames capture. Treat compiler sparse-keyframe warnings as failed prerequisites; do not proceed to a monolithic final render with warnings active.
 - Run freeze/repeated-frame detection on the assembled candidate, then watch every flagged interval and at least one fast-motion interval per source at normal speed. A sharp contact-sheet frame cannot pass motion smoothness.
 - Measure integrated loudness and true peak; for the `硬核火星人` online master review around -16 LUFS and require true peak at or below -1 dBTP unless an approved platform specification overrides it.
+- Export or analyze the post-gain music bus separately from dialogue. Track presence is not evidence of audibility; record its measured level and listen to the opening, a dense speech passage, the final conclusion, and the outro.
 
 ## Mandatory experiential coverage
 
@@ -64,7 +68,9 @@ Any active fatal issue caps the score according to `$score-social-video`; never 
 - 对每个额外 B-roll 窗口核对逐句相关性；泛科技填充、无关网页/引文截图和重复素材必须删除。
 - Watch each chapter transition.
 - Watch final 15 seconds.
+- Confirm the final 15 seconds contain a completed conclusion, a perceptible musical lift or deliberate release, and a motivated transition into the fixed outro; an abrupt cut from an unfinished teaching beat fails.
 - Verify the final conclusion answers the opening question in language a beginner can repeat without specialist vocabulary.
+- Verify each main chapter contains an evidence-bounded program judgment or decision rule beyond source paraphrase, and that the viewer can distinguish it from the speaker's original claim.
 - Verify every foreign-language source-audio interval against a subtitle-coverage ledger; topic summaries do not satisfy this check.
 - For member-original English sources, verify Chinese and English lines are generated from the same cue start/end values, cover the complete audible interval, and remain perceptibly synchronized at the beginning, middle, and end of every excerpt.
 - Verify a looped music bed at every loop boundary for clicks, gaps, gain jumps, and tempo discontinuity; verify the normal program bed uses one fixed gain apart from approved intro/outro fades.

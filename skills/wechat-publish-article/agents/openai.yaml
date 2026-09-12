@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信公众号发布"
+  short_description: "校验公众号文章包，并安全保存草稿或在明确确认后发布"
+  default_prompt: "Use $wechat-publish-article to validate this article package and save it to WeChat as a draft by default."

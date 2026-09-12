@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Video Packaging"
+  short_description: "以微信视频号为核心，创作高留存正文、标题、描述与三比例封面"
+  default_prompt: "Use $social-video-packaging to create an evidence-safe, high-retention, WeChat-Channels-first narration and complete multi-platform publishing package for this video."

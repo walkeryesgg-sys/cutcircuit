@@ -2,7 +2,7 @@
 
 ## Target
 
-- Release target: 9.5+
+- Release target: 9.5+ (or 9.8+ when explicitly requested)
 - User-visible review budget: 3
 - Current round: 0
 
@@ -15,6 +15,8 @@
 | Voice/provider |  |  | Provenance or audio failure |
 | Caption model |  |  | Readability or sync failure |
 | Brand outro |  |  | Explicit approval only |
+| Explanation engine |  |  | Evidence invalidates model or user changes thesis |
+| Open Design template family |  |  | Readability, semantic fit, or direction failure |
 
 ## Review rounds
 
@@ -28,3 +30,8 @@
 
 | Date | Gate | Evidence | Repair | Preventive rule added |
 | --- | --- | --- | --- | --- |
+
+## Learning loop
+
+| Hypothesis | Source observation | Episode variable changed | Pre-publish proxy | Post-publish evidence | Decision |
+| --- | --- | --- | --- | --- | --- |

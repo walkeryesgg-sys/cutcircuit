@@ -14,7 +14,7 @@ Apply this procedure whenever narration or source speech is trimmed, split, repl
 - Require `trim_end <= next_trim_start` for adjacent ranges from the same source. Any overlap is a repeated-word risk and blocks rendering.
 - Ensure the chosen end follows the last audible phoneme. Cutting at an estimated duration or caption boundary is forbidden.
 - Ensure the next start precedes its first intended phoneme but follows every phoneme belonging to the previous sentence.
-- Pad with silence to preserve destination duration when shortening a replacement. Do not pull the next sentence earlier merely to fill a visual slot.
+- Choose the edit mode explicitly. In `locked_picture_patch`, preserve a genuinely locked destination only if its resulting audible gap remains approved. In `audio_first_rebuild`, ripple all downstream units, captions, shots, graphics, and ending from measured speech; never pad back to placeholder slots. Measure gaps on narration stems, because continuous music can conceal them in mixed-track silence detection.
 - Regenerate captions from the final audio map or shift them from the same ledger. Never maintain an independent hand-entered timing map.
 
 ## Regression test every affected seam

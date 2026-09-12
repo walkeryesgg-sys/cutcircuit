@@ -1,0 +1,4 @@
+interface:
+  display_name: "三平台科普贴图"
+  short_description: "把主题或文章变成小红书、视频号、抖音的原创文案与科学图解组图"
+  default_prompt: "使用 $social-image-posts，把这个主题做成小红书、视频号和抖音的图文发布包，完成事实核查、平台文案和实际配图。"

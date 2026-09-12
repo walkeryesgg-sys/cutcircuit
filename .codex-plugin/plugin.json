@@ -1,20 +1,30 @@
 {
   "name": "cutcircuit",
-  "version": "0.2.0",
-  "description": "Evidence-led video production with an independent score-and-repair loop.",
+  "version": "0.3.0",
+  "description": "Evidence-led research, WeChat writing, social packaging, and video production skills.",
   "author": {
     "name": "wangdongwu"
   },
   "license": "MIT",
-  "keywords": ["video", "editing", "quality-assurance", "youtube", "codex-skills"],
+  "keywords": [
+    "video",
+    "editing",
+    "quality-assurance",
+    "youtube",
+    "codex-skills"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "CutCircuit",
     "shortDescription": "Source, cut, score, repair, and deliver videos.",
-    "longDescription": "CutCircuit orchestrates evidence-led video production, authorized YouTube sourcing, independent release scoring, and iterative repair until the requested quality threshold passes.",
+    "longDescription": "Nine original skills for research sourcing, WeChat article packages and delivery, social images and video packaging, plus evidence-led video production with independent quality review.",
     "developerName": "wangdongwu",
     "category": "Creative",
-    "capabilities": ["Video production", "Video review", "Media sourcing"],
+    "capabilities": [
+      "Video production",
+      "Video review",
+      "Media sourcing"
+    ],
     "defaultPrompt": [
       "Use CutCircuit to produce this video and run the quality loop.",
       "Use CutCircuit to review this finished video for release.",

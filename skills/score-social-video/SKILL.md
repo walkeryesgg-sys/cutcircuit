@@ -11,6 +11,7 @@ Judge the delivered viewing experience, not whether the render command succeeded
 
 1. Read [references/scoring-standard.md](references/scoring-standard.md).
 2. For a “硬核火星人” video, also read [references/hardcore-martian-benchmark.md](references/hardcore-martian-benchmark.md).
+   For `马斯克商业解读`, also audit the episode against `../produce-social-video/references/musk-business-member-template.md`, including the single explanation engine, question-escalation chain, evidence/interpretation boundary, and footage-to-graphics ratio.
 3. Run `scripts/probe_video.py VIDEO --output REPORT.json` for objective signals.
 4. Build a contact sheet that covers:
    - every media window at start, midpoint, and end;
@@ -38,6 +39,8 @@ Judge the delivered viewing experience, not whether the render command succeeded
 
 ## Report contract
 
+Bind the report to the candidate's SHA-256, the canonical script hash, timeline hash, reviewer identity, and review evidence paths. Report normal-speed watch coverage truthfully; starting playback, waiting for its duration, reading a transcript, or looking at contact sheets is not a completed audiovisual watch. If the available review surface cannot expose both moving picture and audible sound, mark that requirement incomplete and withhold a passing premium score. Any changed candidate hash invalidates the prior verdict. For rebuilds, run `../cutcircuit/scripts/validate_timeline.py` and separately audit the narration stem; silence detection on a music-backed mix cannot prove speech continuity.
+
 Return the human-readable verdict and save the same findings as `score-report.json` beside the reviewed candidate. The JSON must contain `verdict`, `score`, `target`, `passed`, `active_cap`, `full_watch_completed`, `fatal_issues`, `issues`, `repair_priority`, and `rescore_required`. Each issue must contain `timecode`, `category`, `severity`, `evidence`, and `fix`.
 
 Return:
@@ -55,6 +58,7 @@ Return:
 - `是否必须重新完整观看`
 
 Never award `9.0+` from metadata and screenshots alone. Never award `9.5+` without a full linear watch and zero active fatal gates.
+Never award `9.8+` unless every 30-second window has a documented information reward or purposeful dramatic hold, the opening promise starts paying off by 15 seconds, the central model survives at least one limit/counterexample, the Open Design states are inspected at maximum density, and the final candidate has been independently rescored after all repairs.
 
 Set `passed` to true only when the score reaches the requested target, no fatal gate remains, and all watch requirements for that target are satisfied. Set `rescore_required` to true whenever a proposed repair changes timing, speech, captions, music, media windows, or scene seams.
 

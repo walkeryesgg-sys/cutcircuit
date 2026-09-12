@@ -52,7 +52,7 @@ Rules:
 - never cut a speaker mid-sentence;
 - use source audio as evidence, not wallpaper;
 - remove unexplained multi-second gaps;
-- duck music under all speech;
+- follow the approved music policy; a stable bed stays at constant gain during normal playback;
 - design music changes around chapters rather than arbitrary clip boundaries.
 
 ## 5. Scene plan

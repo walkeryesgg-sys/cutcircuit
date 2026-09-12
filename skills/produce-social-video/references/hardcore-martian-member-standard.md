@@ -7,6 +7,7 @@
 - Select topics only from the approved `马斯克原典` plan and sequence.
 - State one central question, one evidence-backed thesis, its boundary conditions, and one transferable conclusion or exercise.
 - Distinguish verified fact, exact Musk/source claim, interpretation, and inference in the facts ledger.
+- Add a recognizable `硬核火星人` editorial contribution after the evidence: an explicitly labeled interpretation, decision rule, consequence, or boundary that is not merely Musk's statement in new words. Each main chapter must move through evidence → our judgment → practical implication.
 - Do not include membership promotion, benefits, purchase language, calls to action, or an unapproved next-episode teaser.
 
 ## Standard structure
@@ -60,6 +61,7 @@
 
 - Keep narration and original speech consistently intelligible; music must not mask consonants, sentence endings, or room-tone evidence.
 - Keep the normal music bed stable. Do not pump it up and down around every phrase; use controlled changes only at section transitions and the ending.
+- The risk reel must already demonstrate the intended music identity. The last spoken line must hand directly into the fixed outro with the bed continuing underneath; any unscripted pre-outro silence longer than 0.75 seconds is a failed ending gate.
 - Normalize the selected music asset to the delivery sample rate before assembly. If it is shorter than the program, create a tested crossfade loop with no level jump or exposed seam; permit only intentional opening and ending fades while the normal bed remains at one fixed gain.
 - Preserve meaningful original sound in launches, factories, demonstrations, reactions, and interviews.
 - For the assembled online master, review around -16 LUFS integrated with true peak at or below -1 dBTP; treat platform delivery needs and source dynamics as final authority rather than forcing destructive normalization.

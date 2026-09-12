@@ -1,0 +1,4 @@
+interface:
+  display_name: "YouTube 研究采集流水线"
+  short_description: "搜索视频、扩展频道、抓取字幕、多级去重并生成下载队列"
+  default_prompt: "Use $youtube-research-pipeline to discover, deduplicate, subtitle, and queue high-quality research videos."

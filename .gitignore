@@ -7,3 +7,8 @@ downloads/
 renders/
 *.part
 *.ytdl
+
+node_modules/
+*.log
+*.cookies
+cookies.txt

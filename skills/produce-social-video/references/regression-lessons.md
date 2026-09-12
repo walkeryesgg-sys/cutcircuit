@@ -2,6 +2,8 @@
 
 Use this checklist to prevent defects observed during iterative source-led and member-video production from recurring.
 
+For native-TTS rebuilds or a review of production history, also read [september-rebuild-postmortem.md](september-rebuild-postmortem.md). For “流水账 / 记不住” feedback, read [five-minute-focus-and-recall.md](five-minute-focus-and-recall.md) before rewriting; technical repair alone does not resolve an editorial failure.
+
 ## Opening contract
 
 - Make frame one sharp, bright enough, full-screen, and immediately understandable. Reject blurred vlog titles, embedded subscribe graphics, player controls, portrait footage with side bars, or distant subjects as the hero opening.
@@ -21,6 +23,9 @@ Use this checklist to prevent defects observed during iterative source-led and m
 - Treat late-program hiss, buzzing, phase changes, or codec residue as fatal. Normalize sample rate/channel layout before assembly and perform one final audio encode.
 - After every trim, test for missing final phonemes, leading residue, duplicated words, boundary clicks, abrupt breaths, and unintended pauses using `audio-boundary-safety.md`.
 - When a local repair creates another speech error one second later, rebuild the complete neighboring sentence chain rather than applying another isolated patch.
+- Do not append silent watermark/diagnostic footage to a viewer-facing risk reel. Keep technical contrast tests in separate QA evidence, or run them underneath active narration/music. Measure the final-spoken-word → fixed-outro boundary; an unscripted gap over 0.75 seconds fails.
+- A risk reel for a music-approved program must contain the actual intended music topology at audible post-gain loudness. “Music will be added later” cannot pass the direction-lock reel because it hides pacing, seam, and ending defects.
+- Measure the isolated rendered BGM bus after every gain, loop, duck, and normalization stage. Do not infer audibility from the source file or mixed master. An isolated bed averaging below roughly -32 dBFS is a review trigger; normal-speed listening still decides the result.
 
 ## Picture and sequence invariants
 
@@ -32,10 +37,12 @@ Use this checklist to prevent defects observed during iterative source-led and m
 - Label vehicles and events from evidence. Do not substitute Falcon, Starship, launch, abort, diversion, or explosion based on visual resemblance.
 - Keep full-screen source footage full-screen. Do not end on portrait footage padded by side bars when a horizontal grand image is available.
 - End with the emotionally largest horizontal moving hero image, normally for at least 6 seconds, followed by a readable 0.8–1.2 second hold.
+- Give the ending a narrative runway: restate or resolve the opening question, allow the score to lift, then enter the fixed outro. Do not hard-cut from an unfinished list, exercise item, or dense explanation directly into the brand ending.
 - Count source-shot reuse in the assembled timeline. A distinct shot should normally appear no more than twice; rotation code must use the clip's probed native duration rather than an assumed duration, or the tail can render black.
 - Before a long render, re-encode sparse-keyframe source excerpts to a seek-safe delivery mezzanine (normally GOP 30 at 30 fps) and inspect start, midpoint, and end−0.2s. Container duration alone does not prove frame availability.
 - Normalize all scheduled sources to CFR at the delivery fps before composition. Do not ignore renderer warnings about sparse keyframes or proceed because static snapshots look correct; verify motion at normal speed and run repeated-frame/freeze detection on the assembled master.
 - Reject any full-frame shot that is visibly soft or smeared in ordinary playback. A semantically correct shot is still unusable when its perceptual clarity breaks the surrounding quality level; replace it rather than sharpening or upscaling it.
+- Track familiarity by source video and perceptual fingerprint across recent member episodes, not only by exact source-time range. A different timestamp from a repeatedly used Tesla-factory, launch, landing, or interview source still reads as repeated material and must be replaced unless it is deliberate evidence.
 - Time source-language captions from real transcript timestamps. For member originals, bind the Chinese translation and English transcript to the same cue object and render them as a synchronized bilingual pair. Equal-duration subdivision, topic-summary captions, and captions inferred only from the surrounding article are not acceptable substitutes for translation coverage.
 - Do not solve caption length by cutting text at the midpoint. Keep the sentence visible until its final phoneme and wrap it visually when necessary. If a temporal split is unavoidable, place it at a real pause after a completed clause and inspect the preceding/current/following cue together.
 - When timed elements inherit a global `.clip { inset: 0 }`, every non-full-screen card must explicitly unset `right` and `bottom` and declare its width/height behavior. Otherwise a small card can silently become a full-screen opaque mask.
