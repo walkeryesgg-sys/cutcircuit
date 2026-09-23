@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Add the member original-audio curation format across routing, production, packaging, and independent review.
+- Specify synchronized bilingual subtitles, source-context preservation, and background/content/significance/reflection publication copy.
+- Accept `member_source_curated` in brief validation while retaining existing program types and paid review requirements.
+
 ## 0.3.0 — 2026-09-12
 
 - Consolidate five original research, WeChat, and social packaging skills alongside the four video skills.

@@ -91,7 +91,7 @@ def validate_brief(data):
 
     program_type = get_path(data, "creative.program_type")
     if isinstance(program_type, str) and program_type not in {
-        "member_original", "public_story", "custom"
+        "member_original", "member_source_curated", "public_story", "custom"
     }:
         errors.append("creative.program_type: unsupported program type")
 

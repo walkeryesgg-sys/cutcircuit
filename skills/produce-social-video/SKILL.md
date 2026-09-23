@@ -7,6 +7,10 @@ description: Discover requirements through a mandatory pre-production interview,
 
 Create the finished viewing experience, not merely a technically valid MP4.
 
+## Member original-audio curation
+
+For 会员原声精选 / curated original-audio member talks, read [references/member-source-curated.md](references/member-source-curated.md) before planning. Use `member_source_curated + source_led`. Apply its scoped exceptions to narration, editorial contribution, music and rigid pacing; do not import the original-curriculum sequence. Deliver and review the required publication copy alongside the video.
+
 ## Mandatory pre-production gate
 
 Authorization precedence: an explicit request to design and produce from scratch, with permission to revise the script, authorizes those stages. Record the current instruction and make a concrete plan before production; continue without repeating an approval question. The interview/version-approval procedure below applies to unresolved or not-yet-authorized production. Established series defaults need no new interview. Read `../cutcircuit/references/verified-production.md` for rebuilds and premium production, and run its shared-timeline validator before rendering.

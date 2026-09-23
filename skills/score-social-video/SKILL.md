@@ -7,6 +7,9 @@ description: Evaluate finished self-media and paid-course videos on a 10-point r
 
 Judge the delivered viewing experience, not whether the render command succeeded.
 
+
+For `member_source_curated` (会员原声精选), read [the type contract](../produce-social-video/references/member-source-curated.md). Evaluate original-audio continuity, source/context fidelity, accessible subtitles, picture/slide readability and the four required publication explanations. Do not penalize absence of Chinese narration, fixed reversals or music when the brief explicitly chooses none. Preserve all relevant fatal gates, paid >=9.5 threshold and full linear watch.
+
 ## Required workflow
 
 1. Read [references/scoring-standard.md](references/scoring-standard.md).

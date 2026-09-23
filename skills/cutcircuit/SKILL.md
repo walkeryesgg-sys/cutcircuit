@@ -19,6 +19,8 @@ Do not attribute quality to a model label. Re-evaluate capabilities with observa
 
 ## Route the request
 
+- For paid original-audio curated talks/interviews (会员原声精选), use `program_type: member_source_curated` and `edit_model: source_led`; require the producer to read [member-source-curated.md](../produce-social-video/references/member-source-curated.md). Its scoped rules take precedence over generic narration, per-chapter voiced analysis, compulsory music and fixed retention templates; preserve independent paid-grade review. Require publication copy covering background, selected content, significance and a concrete viewer reflection.
+
 - For a new video or substantial revision, read and follow `$produce-social-video`.
 - When the approved treatment is full-screen source footage alternating narration with original-audio evidence, require `$produce-social-video` to load its source-led commentary template.
 - When the approved treatment is a 25–60 second public short built around one person's visible waiting, silence, or micro-reaction during a verified high-stakes event, classify it as `public_story + character_pressure_moment` and require `$produce-social-video` to load `character-pressure-moment-short.md`.
@@ -29,7 +31,7 @@ Do not attribute quality to a model label. Re-evaluate capabilities with observa
 ## Run the production circuit
 
 1. Use `$produce-social-video` to interview the user, deliver a complete pre-production plan, and obtain explicit approval of that exact plan version. The plan must include the script, narrative structure, beat sheet, shot list, storyboard, audio/caption plan, asset plan, risks, deliverables, and acceptance criteria. Do not begin media acquisition, voice generation, editing, animation, or rendering before approval.
-2. For `硬核火星人`, classify both `program_type` (`member_original`, `public_story`, or `custom`) and `edit_model` (`source_led`, `narration_led_montage`, or `hybrid_evidence_lesson`). Never infer member rules from editing appearance alone.
+2. For `硬核火星人`, classify both `program_type` (`member_original`, `member_source_curated`, `public_story`, or `custom`) and `edit_model` (`source_led`, `narration_led_montage`, or `hybrid_evidence_lesson`). Never infer member rules from editing appearance alone.
    When the episode belongs to `马斯克商业解读`, require `$produce-social-video` to load its Musk-business member template. This is a distinct paid explanatory format, not a generic Musk montage or a slide deck.
 3. Before composing frames, require `$produce-social-video` to read `references/visual-hierarchy.md`, assign every beat to `watch` or `understand`, and preserve footage-first hierarchy.
    Require the producer to read `references/iteration-budget.md` and treat two review rounds plus one bounded repair round as the production budget. A full-length render is not an acceptable discovery tool for unresolved creative direction, asset fitness, voice provenance, caption segmentation, or brand identity.

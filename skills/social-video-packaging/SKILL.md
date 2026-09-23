@@ -11,6 +11,10 @@ Build a publishable package, not a list of generic clickbait variants. Optimize 
 
 Treat the title, cover, first seconds, and description as one promise. Never improve clicks by making the promise less accurate.
 
+## Member original-audio selections
+
+For `member_source_curated` / 会员原声精选, read [references/member-source-publishing.md](references/member-source-publishing.md). Deliver source-grounded publication copy explaining background, actual selected content, significance and a concrete viewer reflection. This mode overrides generic forced reversals, narrated exclusive analysis and public CTAs; keep promise and factual audits.
+
 ## Required workflow
 
 1. **Inspect the source.** Read the script or brief. If a video exists, inspect its metadata, representative frames, opening, and key claims. Do not infer the story from a filename alone.

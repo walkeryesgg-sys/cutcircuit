@@ -14,6 +14,10 @@ Use for paid/member episodes in the approved `马斯克原典` curriculum.
 - Require no fatal gate, score `>=9.5`, and a completed full linear watch.
 - Read and apply [hardcore-martian-member-standard.md](hardcore-martian-member-standard.md).
 
+### `member_source_curated`
+
+Paid original-audio selections from talks, interviews or engineering visits, accessible to broad Chinese audiences. Read [member-source-curated.md](member-source-curated.md). Pair with `source_led`; original English audio plus contextual Chinese text does not require Chinese narration. Keep paid review >=9.5 and full linear watch. This type is independent of the approved original-curriculum sequence.
+
 ### `public_story`
 
 Use for a free public-facing story, event, profile, prologue, or audience-entry video.
@@ -34,7 +38,7 @@ Use only when neither house type fits. Record the reason and confirm the differi
 Use when one authoritative event/interview/source supplies the story and visual continuity, as in `trump-granddaughter-elon-starship`.
 
 - Let original full-screen footage dominate.
-- Alternate concise Chinese context with verified original-audio evidence.
+- Alternate concise Chinese context with verified original-audio evidence. For `member_source_curated`, context is normally text and the original audio remains the spoken spine.
 - Use normal subtitles and a light watermark; avoid knowledge cards, decorative B-roll, and large persistent overlays.
 - Preserve valuable pauses, reactions, room tone, and cause/effect inside the source event.
 
